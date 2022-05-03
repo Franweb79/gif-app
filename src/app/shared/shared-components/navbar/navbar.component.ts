@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,15 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  @ViewChild('searchInputElement') searchElement!:ElementRef<HTMLInputElement>;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  search(valueOfInput:HTMLInputElement){
+  search(){
     console.log ("busqueda");
 
-    console.log (valueOfInput.value);
+    console.log (this.searchElement.nativeElement.value);
+
+    this.searchElement.nativeElement.value="";
   }
 
 

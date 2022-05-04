@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { from, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,8 @@ export class GifsService {
   //historial
 
   private _historic:string[];
+
+  public $historicObserv=new Observable<string[]>();
 
   constructor() { 
 
@@ -37,13 +40,15 @@ export class GifsService {
   public insertValueHistoric(valueToBeInserted:string){
     this._historic.push(valueToBeInserted);
 
+    this.$historicObserv=of(this._historic);
+
     this.setItemOnLocalStorage(valueToBeInserted);
 
 
   }
 
   public setItemOnLocalStorage(valueToInsert:string){
-    localStorage.setItem('search2',valueToInsert);
+    localStorage.setItem('search1',valueToInsert);
 
   }
 

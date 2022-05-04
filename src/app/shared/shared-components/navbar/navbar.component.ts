@@ -27,6 +27,9 @@ export class NavbarComponent implements OnInit {
 
     //one getter is called with no ()
     console.log(this._gifsService.historic);
+
+    console.log (this._gifsService.$historicObserv);
+
   }
 
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { from, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +10,22 @@ export class GifsService {
 
   private _historic:string[];
 
-  public $historicObserv=new Observable<string[]>();
+  // we declare a property to store the reversed array.
+
+
+  public reversedArray:string[];
+
+
+  public historicObserv$:Observable<string[]>;
 
   constructor() { 
 
     this._historic=[];
+
+    this.reversedArray=[];
+
+    this.historicObserv$=new Observable<string[]>();
+
   }
 
   /*
@@ -52,39 +63,49 @@ export class GifsService {
 
   public insertValueHistoric(valueToBeInserted:string){
 
-    //first, we declare a local variable to store the reversed array.
-
-    let reversedArray:string[]=[];
+    /*
+      we must empty the reversed array before inserting each value
+      to avoid that it shows prior stored data
+   */
+    this.reversedArray=[];
 
     //we insert new value on original array
 
     this._historic.push(valueToBeInserted);
 
+    console.log (this._historic);
     //we push each element of original array to this copy
 
 
     for (let i of this._historic){
-      reversedArray.push(i);
+      this.reversedArray.push(i);
     }
 
     //Then we reverse it
 
-    reversedArray.reverse();
+    this.reversedArray.reverse();
 
     /*
       We create an observable of this reversed array, observable will be shown
       with the async pipe where needed, to avoid using suscribe()
     */
 
-    this.$historicObserv=of(reversedArray);
+    this.historicObserv$=of(this.reversedArray);
 
-    this.setItemOnLocalStorage(valueToBeInserted);
+    //this.setItemOnLocalStorage(valueToBeInserted);
 
-
+    this.setItemsOnLocalStorage();
   }
 
-  public setItemOnLocalStorage(valueToInsert:string){
-    localStorage.setItem('search1',valueToInsert);
+  public setItemsOnLocalStorage(){
+    
+    //localStorage.clear();
+    
+    for(let i=0; i<this.reversedArray.length;++i){
+
+      localStorage.setItem(`search-${i+1}`,this.reversedArray[i]);
+    }
+    //localStorage.setItem('search1',valueToInsert);
 
   }
 

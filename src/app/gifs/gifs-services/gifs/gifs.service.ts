@@ -71,7 +71,13 @@ export class GifsService {
 
     //we insert new value on original array
 
+    //if we hace searched more than 5 times, we delete the first search with shift
+
     this._historic.push(valueToBeInserted);
+
+    if(this._historic.length>5){
+      this._historic.shift();
+    }
 
     console.log (this._historic);
     //we push each element of original array to this copy
@@ -100,11 +106,13 @@ export class GifsService {
   public setItemsOnLocalStorage(){
     
     //localStorage.clear();
+
+    localStorage.setItem('search-items',JSON.stringify(this.reversedArray));
     
-    for(let i=0; i<this.reversedArray.length;++i){
+   /* for(let i=0; i<this.reversedArray.length;++i){
 
       localStorage.setItem(`search-${i+1}`,this.reversedArray[i]);
-    }
+    }*/
     //localStorage.setItem('search1',valueToInsert);
 
   }

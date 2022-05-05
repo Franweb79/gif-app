@@ -8,7 +8,7 @@ export class GifsService {
 
   //historial
 
-  private _historic:string[];
+  public _historic:string[];
 
   // we declare a property to store the reversed array.
 
@@ -34,7 +34,7 @@ export class GifsService {
 
 
   //we declare getter without _ on method name to avoid confussions
-  get historic(){
+  public get historic(){
     //return this._historic;
 
     /* TODO fernando says it is better to break the reference 
@@ -45,6 +45,9 @@ export class GifsService {
 
   }
 
+  public set historic(p_dataToPass:string[]){
+    this._historic=p_dataToPass;
+  }
   
   /*
     function to insert values on historic.

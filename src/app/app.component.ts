@@ -18,96 +18,104 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    /*
-      
-      See README´s "Notes  for Developers" number 1
+    this.initializeData();
 
+  }
 
-    */
-    if(localStorage.length>0){
+  /*
+    will be used to manage data on localStorage inside onInit
 
-      //TODO make non null assertion operator ! work and delete the any;
+    See README´s "Notes  for Developers" number 1
 
-      /*
-        TODO make a test for this. Test should be we have a localstorage with "9,8,7,6,5"
+  */
+  initializeData(){
 
-        when we close window and open it again, and make another search, we shoudl have
+    
+      if(localStorage.length>0){
 
-        for example "a (the new search),9,8,7,6"
-
-      */
-
-      /*
-        we imagine we have data stored on localStorage as "9,8,7,6,5" 
-        (remember ww allow maximum 5 search items)
-
-      */
-
-      let localStorageToParse:any;
-
-      localStorageToParse=localStorage.getItem('search-items');
-
-      //we must parse the localStorage data because it is stored as string
-
-      let localStorageToBePassedToHistoric:string[];
-
-      localStorageToBePassedToHistoric=JSON.parse(localStorageToParse);
-
-      /*
-        we must reverse it, before passing to historic property on the gifs.service.ts.
+        //TODO make non null assertion operator ! work and delete the any;
+  
+        /*
+          TODO make a test for this. Test should be we have a localstorage with "9,8,7,6,5"
+  
+          when we close window and open it again, and make another search, we shoudl have
+  
+          for example "a (the new search),9,8,7,6"
+  
+        */
+  
+        /*
+          we imagine we have data stored on localStorage as "9,8,7,6,5" 
+          (remember ww allow maximum 5 search items)
+  
+        */
+  
+        let localStorageToParse:any;
+  
+        localStorageToParse=localStorage.getItem('search-items');
+  
+        //we must parse the localStorage data because it is stored as string
+  
+        let localStorageToBePassedToHistoric:string[];
+  
+        localStorageToBePassedToHistoric=JSON.parse(localStorageToParse);
+  
+        /*
+          we must reverse it, before passing to historic property on the gifs.service.ts.
+          
+          If we don´t make that "9,8,7,6,5..." is now "5,6,7,8,9..." that would imply
+          that on the insert insertValueHistoric() method, when we reverse data again,
+          it would be "5,6,7,8,9" and could not be shown in the order we want (the 9 must be the first)
+  
+        */
+        localStorageToBePassedToHistoric.reverse();
+  
+  
+        /*
+         
+          Data is now  "5,6,7,8,9"
         
-        If we don´t make that "9,8,7,6,5..." is now "5,6,7,8,9..." that would imply
-        that on the insert insertValueHistoric() method, when we reverse data again,
-        it would be "5,6,7,8,9" and could not be shown in the order we want (the 9 must be the first)
-
-      */
-      localStorageToBePassedToHistoric.reverse();
-
-
-      /*
-       
-        Data is now  "5,6,7,8,9"
-      
-        now we pass data to the historic property where we store the searchs
-        before manipulating it in insertValueHistoric()
-      */
-
-      for (let item of localStorageToBePassedToHistoric){
-        this._gifsService._historic.push(item);
+          now we pass data to the historic property where we store the searchs
+          before manipulating it in insertValueHistoric()
+          
+        */
+  
+        for (let item of localStorageToBePassedToHistoric){
+          this._gifsService._historic.push(item);
+        }
+  
+        /*
+          on another property called reversedArray, we store data in the correct order
+          before pushing it to localStorage inside insertValueHistoric().
+  
+          Data is still "5,6,7,8,9"
+  
+        */
+  
+        for (let i of this._gifsService._historic){
+          this._gifsService.reversedArray.push(i);
+        }
+    
+  
+        /*
+          As reversedArray data is still not reversed, we must reverse it
+  
+          Now it will be "9,8,7,6,5"
+  
+        */
+    
+        this._gifsService.reversedArray.reverse();
+  
+    
+        /*
+          We create an observable of this reversed array, observable will be shown
+          with the async pipe where needed, to avoid using suscribe()
+        */
+    
+        this._gifsService.historicObserv$=of(this._gifsService.reversedArray);
+   
+        
       }
-
-      /*
-        on another property called reversedArray, we store data in the correct order
-        before pushing it to localStorage inside insertValueHistoric().
-
-        Data is still "5,6,7,8,9"
-
-      */
-
-      for (let i of this._gifsService._historic){
-        this._gifsService.reversedArray.push(i);
-      }
-  
-
-      /*
-        As reversedArray data is still not reversed, we must reverse it
-
-        Now it will be "9,8,7,6,5"
-
-      */
-  
-      this._gifsService.reversedArray.reverse();
-
-  
-      /*
-        We create an observable of this reversed array, observable will be shown
-        with the async pipe where needed, to avoid using suscribe()
-      */
-  
-      this._gifsService.historicObserv$=of(this._gifsService.reversedArray);
- 
-      
-    }
 
   }
 }

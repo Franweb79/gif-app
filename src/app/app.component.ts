@@ -18,42 +18,85 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
+    /*
+      
+      See README´s "Notes  for Developers" number 1
+
+
+    */
     if(localStorage.length>0){
 
-      let localStorageToParse:any //TODO make non null assertion operator ! work and delete the any;
+      //TODO make non null assertion operator ! work and delete the any;
+
+      /*
+        TODO make a test for this. Test should be we have a localstorage with "9,8,7,6,5"
+
+        when we close window and open it again, and make another search, we shoudl have
+
+        for example "a (the new search),9,8,7,6"
+
+      */
+
+      /*
+        we imagine we have data stored on localStorage as "9,8,7,6,5" 
+        (remember ww allow maximum 5 search items)
+
+      */
+
+      let localStorageToParse:any;
+
       localStorageToParse=localStorage.getItem('search-items');
+
+      //we must parse the localStorage data because it is stored as string
 
       let localStorageToBePassedToHistoric:string[];
 
       localStorageToBePassedToHistoric=JSON.parse(localStorageToParse);
-      console.log ("local to be passed to historic", localStorageToBePassedToHistoric);
+
+      /*
+        we must reverse it, before passing to historic property on the gifs.service.ts.
+        
+        If we don´t make that "9,8,7,6,5..." is now "5,6,7,8,9..." that would imply
+        that on the insert insertValueHistoric() method, when we reverse data again,
+        it would be "5,6,7,8,9" and could not be shown in the order we want (the 9 must be the first)
+
+      */
       localStorageToBePassedToHistoric.reverse();
 
-      console.log ("local to be passed to historic tras ponerlo bien", localStorageToBePassedToHistoric);
 
+      /*
+       
+        Data is now  "5,6,7,8,9"
+      
+        now we pass data to the historic property where we store the searchs
+        before manipulating it in insertValueHistoric()
+      */
 
       for (let item of localStorageToBePassedToHistoric){
         this._gifsService._historic.push(item);
       }
-     // this._gifsService.historic=JSON.parse(localStorageToParse);
-      console.log ('historic tras parsear', this._gifsService._historic);
 
+      /*
+        on another property called reversedArray, we store data in the correct order
+        before pushing it to localStorage inside insertValueHistoric().
 
-      //this._gifsService.historic.reverse();
-      //console.log ('historic tras ponerlo bien otra vez', this._gifsService.historic);
+        Data is still "5,6,7,8,9"
 
+      */
 
       for (let i of this._gifsService._historic){
         this._gifsService.reversedArray.push(i);
       }
   
-      console.log ('reversed tras pasar datos del historic', this._gifsService.reversedArray);
 
-      //Then we reverse it
+      /*
+        As reversedArray data is still not reversed, we must reverse it
+
+        Now it will be "9,8,7,6,5"
+
+      */
   
       this._gifsService.reversedArray.reverse();
-
-      console.log ('reversed tras reversear', this._gifsService.reversedArray);
 
   
       /*
@@ -62,13 +105,7 @@ export class AppComponent implements OnInit {
       */
   
       this._gifsService.historicObserv$=of(this._gifsService.reversedArray);
-  //console.log (this._gifsService.reversedArray);
-      //this.setItemOnLocalStorage(valueToBeInserted);
-  
-     // this._gifsService.setItemsOnLocalStorage();
-
-     // this._gifsService.historic.reverse();
-      //console.log(JSON.parse(localStorageToParse));
+ 
       
     }
 

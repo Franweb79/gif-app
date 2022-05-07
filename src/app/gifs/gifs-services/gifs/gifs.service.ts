@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { resetFakeAsyncZone } from '@angular/core/testing';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -6,7 +7,14 @@ import { Observable, of } from 'rxjs';
 })
 export class GifsService {
 
-  //historial
+  
+  /*
+  TODO this property maybe should be private, but getter and setter
+  was giving me problems on components so at this moment i let it as public,
+  maybe will be changed in the future for security resetFakeAsyncZone
+
+  It stores the searchs before reversing and pushing them to the localStorage
+  */
 
   public _historic:string[];
 
@@ -28,39 +36,15 @@ export class GifsService {
 
   }
 
-  /*
-    getter from _historic, because we will need to expose things from this array,
-  */
-
-
-  //we declare getter without _ on method name to avoid confussions
-  public get historic(){
-    //return this._historic;
-
-    /* TODO fernando says it is better to break the reference 
-    with the spread operator and create a new array, because we could change something on the original
-    array, UNDERSTAND THIS*/
-
-    return [...this._historic];
-
-  }
-
-  public set historic(p_dataToPass:string[]){
-    this._historic=p_dataToPass;
-  }
   
   /*
     function to insert values on historic.
 
-    We will not onlt insert the value, but will make all the logic
-    to show it on the html, also insert it on the local storage
+    SEE README´s "notes for developers" number 2
 
-    We want to show the newest search items on the first place,
-    so we will have to reverse the array which contain the historic(_historic)
-
-    We don´t want to modify the original array, it would give lots of problems
-    when reversing several times and such, I think it is better always having a reference
-    to the original array with no modifications
+    //TODO make a test of this method, we insert 5 values and must return
+    an array with reversed data "9,8,7,6,5" and if we insert another value
+    the 5 must dissappear and must come new one e.g. "a,9,8,7,6"
 
   */
 
@@ -74,7 +58,7 @@ export class GifsService {
 
     //we insert new value on original array
 
-    //if we hace searched more than 5 times, we delete the first search with shift
+    //if we have searched more than 5 times, we delete the first search with shift
 
     this._historic.push(valueToBeInserted);
 
@@ -82,7 +66,7 @@ export class GifsService {
       this._historic.shift();
     }
 
-    console.log (this._historic);
+    
     //we push each element of original array to this copy
 
 
@@ -101,22 +85,16 @@ export class GifsService {
 
     this.historicObserv$=of(this.reversedArray);
 
-    //this.setItemOnLocalStorage(valueToBeInserted);
 
     this.setItemsOnLocalStorage();
   }
 
   public setItemsOnLocalStorage(){
     
-    //localStorage.clear();
 
     localStorage.setItem('search-items',JSON.stringify(this.reversedArray));
     
-   /* for(let i=0; i<this.reversedArray.length;++i){
-
-      localStorage.setItem(`search-${i+1}`,this.reversedArray[i]);
-    }*/
-    //localStorage.setItem('search1',valueToInsert);
+ 
 
   }
 

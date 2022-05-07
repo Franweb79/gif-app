@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //TODO make a test of this method, when we enter a search and push enter
   search(){
 
     let valueToInsert=this.searchElement.nativeElement.value;
@@ -26,7 +27,7 @@ export class NavbarComponent implements OnInit {
     this.searchElement.nativeElement.value="";
 
     //one getter is called with no ()
-    console.log(this._gifsService.historic);
+    console.log(this._gifsService._historic);
 
     console.log (this._gifsService.historicObserv$);
 

@@ -9,10 +9,25 @@ import { GifsService } from 'src/app/gifs/gifs-services/gifs/gifs.service';
 export class NavbarComponent implements OnInit {
 
   @ViewChild('searchInputElement') searchElement!:ElementRef<HTMLInputElement>;
+
+  public searchHistoryBox:any; //TODO why doesn´t work the ! null operator when i declare as type HTMLElement
   
-  constructor(public _gifsService:GifsService) { }
+  constructor(public _gifsService:GifsService) { 
+
+
+  }
 
   ngOnInit(): void {
+
+    this.searchHistoryBox=document.getElementById("search-history");
+
+  }
+
+  displaySearchHistory(){
+
+//TODO if I try to initalize this on consctructor doesn´t work, why?
+    this.searchHistoryBox.style.display = "block";
+    
   }
 
   //TODO make a test of this method, when we enter a search and push enter

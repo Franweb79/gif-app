@@ -1,0 +1,5 @@
+#search-history{
+    position:absolute;
+    z-index:1;
+    display:none; /*luego a block*/
+}

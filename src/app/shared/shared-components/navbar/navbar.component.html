@@ -28,9 +28,18 @@
 
         <ul class="d-flex flex-fill navbar-nav mb-lg-0">
           <li class="w-100">
-            <input class="form-control me-2" type="search" placeholder="Search Gifs..." aria-label="Search" (keyup.enter)="search()" #searchInputElement>
+            <input class="form-control me-2" type="search" placeholder="Search Gifs..." aria-label="Search" (keyup.enter)="search()" (click)="displaySearchHistory()" #searchInputElement>
+
+            <ul id="search-history" >
+              <li *ngFor="let item of this._gifsService.historicObserv$ | async">
+                {{item}}
+              </li>
+              
+            </ul>
 
           </li>
+
+          
 
         </ul>
         

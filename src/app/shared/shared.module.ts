@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+
+
 import { NavbarComponent } from './shared-components/navbar/navbar.component';
 
 
@@ -10,7 +13,9 @@ import { NavbarComponent } from './shared-components/navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[NavbarComponent]
     

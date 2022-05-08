@@ -10,17 +10,7 @@
           <li class="nav-item">
             <a class="nav-link" target="_blank" href="https://portfolio.avanzartewebs.com/about-me/">About me</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Your latest searchs
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
+          
 
           
           
@@ -28,8 +18,9 @@
 
         <ul class="d-flex flex-fill navbar-nav mb-lg-0">
           <li class="w-100">
-            <input class="form-control me-2" type="search" placeholder="Search Gifs..." aria-label="Search" (keyup.enter)="search()" (click)="displaySearchHistory()" #searchInputElement>
-
+            <form #searchForm="ngForm">
+              <input class="form-control me-2" type="search" placeholder="Search Gifs..." aria-label="Search" (keyup.enter)="search()" (click)="displaySearchHistory()" #searchInputElement>
+            </form>
             <ul id="search-history" >
               <li *ngFor="let item of this._gifsService.historicObserv$ | async">
                 {{item}}

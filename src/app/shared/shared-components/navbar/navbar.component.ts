@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { GifsService } from 'src/app/gifs/gifs-services/gifs/gifs.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class NavbarComponent implements OnInit {
   
   constructor(public _gifsService:GifsService) { 
 
-
+   
   }
 
   ngOnInit(): void {
@@ -36,15 +37,25 @@ export class NavbarComponent implements OnInit {
     let valueToInsert=this.searchElement.nativeElement.value;
     /*console.log ("busqueda");
 
-    console.log (this.searchElement.nativeElement.value);*/
     
-    this._gifsService.insertValueHistoric(valueToInsert);
+    console.log (this.searchElement.nativeElement.value);*/
+
+    if(!valueToInsert || !valueToInsert.trim()){
+      alert("vacio");
+
+    }else{
+      this._gifsService.insertValueHistoric(valueToInsert);
     this.searchElement.nativeElement.value="";
 
     //one getter is called with no ()
     console.log(this._gifsService._historic);
 
     console.log (this._gifsService.historicObserv$);
+    }
+    
+    
+
+    
 
   }
 

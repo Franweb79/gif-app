@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { of } from 'rxjs';
 import { GifsService } from 'src/app/gifs/gifs-services/gifs/gifs.service';
 
 @Component({
@@ -35,22 +35,43 @@ export class NavbarComponent implements OnInit {
   search(){
 
     let valueToInsert=this.searchElement.nativeElement.value;
-    /*console.log ("busqueda");
 
+    //we will change text color depending if serach is empty or not*/
+
+    let listElement:HTMLElement|null;
+
+    listElement=document.getElementById("search-history");
     
-    console.log (this.searchElement.nativeElement.value);*/
+    /*
+      if search box is empty, we will show a text and no history.
+
+      To do that, we replace the observable data that will be shown
+    */
 
     if(!valueToInsert || !valueToInsert.trim()){
-      alert("vacio");
+     
+      
+      let arrayWithString:string[]=["Please insert search"];
+
+      this._gifsService.historicObserv$=of(arrayWithString);
+
+      
+
+      listElement!.style.color="red";
+
+
 
     }else{
+
       this._gifsService.insertValueHistoric(valueToInsert);
-    this.searchElement.nativeElement.value="";
+      this.searchElement.nativeElement.value="";
 
-    //one getter is called with no ()
-    console.log(this._gifsService._historic);
+      listElement!.style.color="black";
 
-    console.log (this._gifsService.historicObserv$);
+
+      console.log(this._gifsService._historic);
+
+      console.log (this._gifsService.historicObserv$);
     }
     
     

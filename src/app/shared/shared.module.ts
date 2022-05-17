@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -12,7 +13,8 @@ import { NavbarComponent } from './shared-components/navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule
   ],
   exports:[NavbarComponent]
     

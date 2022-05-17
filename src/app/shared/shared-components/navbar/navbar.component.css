@@ -1,5 +1,10 @@
 #search-history{
     position:absolute;
+    list-style-type: none;
+    
+    border-radius: 0.25rem;
+        
     z-index:1;
-    display:none; /*luego a block*/
+    display:none; /*will be set to block on method displaySearchHistory()*/
+
 }

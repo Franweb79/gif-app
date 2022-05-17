@@ -21,9 +21,9 @@
            
               <input class="form-control me-2" type="search" placeholder="Search Gifs..." aria-label="Search" (keyup.enter)="search()" (click)="displaySearchHistory()" #searchInputElement>
            
-            <ul id="search-history" >
+            <ul id="search-history" [@openClose]="isOpen ? 'history-open' : 'history-closed'" >
               <li *ngFor="let item of this._gifsService.historicObserv$ | async">
-                {{item}}
+                <a href="#">{{item}}</a>
               </li>
               
             </ul>

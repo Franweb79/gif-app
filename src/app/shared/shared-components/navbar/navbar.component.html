@@ -19,11 +19,11 @@
         <ul class="d-flex flex-fill navbar-nav mb-lg-0">
           <li class="w-100">
            
-              <input class="form-control me-2" type="search" placeholder="Search Gifs..." aria-label="Search" (keyup.enter)="search()" (click)="displaySearchHistory()" #searchInputElement>
+              <input class="form-control me-2" type="search" placeholder="Search Gifs..." aria-label="Search" (keyup.enter)="search($event)" (click)="displaySearchHistory()" #searchInputElement>
            
             <ul id="search-history" [@openClose]="isOpen ? 'history-open' : 'history-closed'" >
-              <li *ngFor="let item of this._gifsService.historicObserv$ | async">
-                <a href="#">{{item}}</a>
+              <li *ngFor="let item of this._gifsService.historicObserv$ | async" (click)="search($event)">
+                {{item}}
               </li>
               
             </ul>

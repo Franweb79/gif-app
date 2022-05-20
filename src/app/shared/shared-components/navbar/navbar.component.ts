@@ -47,10 +47,15 @@ export class NavbarComponent implements OnInit {
 
   public isOpen:boolean;
 
+  public isClickable:boolean;
+
   
   constructor(public _gifsService:GifsService) { 
    
     this.isOpen=false;
+
+    this.isClickable=true;
+
 
   }
 
@@ -91,14 +96,29 @@ export class NavbarComponent implements OnInit {
 
       console.log (event.target.value);
 
+      //this.isClickable=true;
+
+
    }else if(event.target.nodeName==="LI"){
 
+   // event.target.classList.add("clickable-list");
     valueToInsert=event.target.innerText;
 
-    console.log (event.target.innerText);
+    //this.isClickable=true;
+
+
+
+
+
+    
+
+    
+      
+
+   // console.log (event.target.innerText);
    }
 
-  console.log(event.target.nodeName);
+  //console.log(event.target.nodeName);
     
 
     
@@ -127,6 +147,9 @@ export class NavbarComponent implements OnInit {
 
       listElement!.style.color="red";
 
+      this.isClickable=false;
+
+      event.preventDefault();
 
 
     }else{
@@ -135,6 +158,8 @@ export class NavbarComponent implements OnInit {
       this.searchElement.nativeElement.value="";
 
       listElement!.style.color="black";
+      
+      this.isClickable=true;
 
 
     /*  console.log(this._gifsService._historic);

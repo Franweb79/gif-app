@@ -8,3 +8,8 @@
     display:none; /*will be set to block on method displaySearchHistory()*/
 
 }
+
+.clickable-list:hover{
+    background-color:#FFC107;
+    color: white;
+}

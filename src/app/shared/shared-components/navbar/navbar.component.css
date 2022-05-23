@@ -9,6 +9,18 @@
 
 }
 
+.clickable-list{
+    /*
+        to make each LI element fill all the width of UL element. As we can see on browser´s console
+        it has a padding-left of 2rem, we adjust the margin left as the same negative value.
+
+        The padding left here is to move the text a bit
+
+    */
+    margin-left: -2rem; 
+    padding-left: 2rem;
+}
+
 .clickable-list:hover{
     background-color:#FFC107;
     color: white;

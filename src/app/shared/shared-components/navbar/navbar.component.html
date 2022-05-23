@@ -11,9 +11,6 @@
             <a class="nav-link" target="_blank" href="https://portfolio.avanzartewebs.com/about-me/">About me</a>
           </li>
           
-
-          
-          
         </ul>
 
         <ul class="d-flex flex-fill navbar-nav mb-lg-0">
@@ -23,16 +20,16 @@
            
             <ul id="search-history"  [@openClose]="isOpen ? 'history-open' : 'history-closed'" >
 
-            <span *ngIf="isClickable;else enterValidSearch">
-              <li [ngClass]="{'clickable-list': isClickable ===true }" *ngFor="let item of this._gifsService.historicObserv$ | async" (click)="search($event)">
-                {{item}}
-              </li>
-            </span>
+              <span *ngIf="isClickable;else enterValidSearch">
+                <li class="clickable-list" *ngFor="let item of this._gifsService.historicObserv$ | async" (click)="search($event)">
+                  {{item}}
+                </li>
+              </span>
 
-            <ng-template #enterValidSearch>
-              <li (click)="$event.preventDefault()">Please enter valid search</li>
-              
-            </ng-template>
+              <ng-template #enterValidSearch>
+                <li (click)="$event.preventDefault()">Please enter valid search</li>
+                
+              </ng-template>
             </ul>
 
           </li>

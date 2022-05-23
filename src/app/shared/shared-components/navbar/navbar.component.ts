@@ -96,35 +96,17 @@ export class NavbarComponent implements OnInit {
 
       console.log (event.target.value);
 
-      //this.isClickable=true;
 
 
    }else if(event.target.nodeName==="LI"){
 
-   // event.target.classList.add("clickable-list");
     valueToInsert=event.target.innerText;
 
-    //this.isClickable=true;
-
-
-
-
-
-    
-
-    
-      
-
-   // console.log (event.target.innerText);
    }
 
-  //console.log(event.target.nodeName);
     
 
-    
-   // let valueToInsert=this.searchElement.nativeElement.value;
-
-    //we will change text color depending if serach is empty or not*/
+    //we will change text color depending if search is empty or not*/
 
     let listElement:HTMLElement|null;
 
@@ -134,6 +116,7 @@ export class NavbarComponent implements OnInit {
       if search box is empty, we will show a text and no history.
 
       To do that, we replace the observable data that will be shown
+
     */
 
     if(!valueToInsert || !valueToInsert.trim()){
@@ -149,7 +132,6 @@ export class NavbarComponent implements OnInit {
 
       this.isClickable=false;
 
-      event.preventDefault();
 
 
     }else{
@@ -162,14 +144,9 @@ export class NavbarComponent implements OnInit {
       this.isClickable=true;
 
 
-    /*  console.log(this._gifsService._historic);
-
-      console.log (this._gifsService.historicObserv$);*/
     }
     
-    
-
-    
+     
 
   }
 

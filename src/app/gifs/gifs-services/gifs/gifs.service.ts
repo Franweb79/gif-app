@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { resetFakeAsyncZone } from '@angular/core/testing';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -26,6 +25,7 @@ export class GifsService {
 
   public historicObserv$:Observable<string[]>;
 
+
   constructor() { 
 
     this._historic=[];
@@ -34,7 +34,9 @@ export class GifsService {
 
     this.historicObserv$=new Observable<string[]>();
 
+
   }
+
 
   
   /*

@@ -2,6 +2,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { of } from 'rxjs';
 import { GifsService } from 'src/app/gifs/gifs-services/gifs/gifs.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-navbar',
@@ -146,7 +147,7 @@ export class NavbarComponent implements OnInit {
 
     }
     
-     
+     console.log(`${environment.apiURL}${environment.apiKey}`);
 
   }
 

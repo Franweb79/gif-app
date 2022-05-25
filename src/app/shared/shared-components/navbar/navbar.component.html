@@ -16,7 +16,7 @@
         <ul class="d-flex flex-fill navbar-nav mb-lg-0">
           <li class="w-100">
            
-              <input class="form-control me-2" type="search" placeholder="Search Gifs..." aria-label="Search" (keyup.enter)="search($event)" (click)="displaySearchHistory()" #searchInputElement>
+            <input class="form-control me-2" type="search" placeholder="Search Gifs..." aria-label="Search" (keyup.enter)="search($event)" (click)="displaySearchHistory()" #searchInputElement>
            
             <ul id="search-history"  [@openClose]="isOpen ? 'history-open' : 'history-closed'" >
 

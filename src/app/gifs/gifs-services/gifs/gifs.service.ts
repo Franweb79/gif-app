@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,7 +29,7 @@ export class GifsService {
   public historicObserv$:Observable<string[]>;
 
 
-  constructor() { 
+  constructor(private _http:HttpClient) { 
 
     this._historic=[];
 
@@ -97,6 +100,26 @@ export class GifsService {
     localStorage.setItem('search-items',JSON.stringify(this.reversedArray));
     
  
+
+  }
+
+  /*
+    parameter must be string or undefined because valueToInsert on vanvar.component.ts is declared so to avoid an error.
+    More details on that valueToInsert´s declaration
+  */
+  public getGiphyAPIData(searchText:string | undefined){
+
+    let searchQueryParameter=`${searchText}`;
+
+    let wholeQueryString:string=`${environment.apiURL}${environment.apiKey}&limit=10&q=${searchQueryParameter}`;
+
+    console.log(wholeQueryString);
+
+    this._http.get(wholeQueryString).subscribe(data=>{
+      console.log (data);
+    })
+
+
 
   }
 

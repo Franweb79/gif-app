@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { GifsCardsComponent } from './gifs-components/gifs-cards/gifs-cards.component';
 
@@ -10,7 +12,8 @@ import { GifsCardsComponent } from './gifs-components/gifs-cards/gifs-cards.comp
     GifsCardsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports:[
     GifsCardsComponent

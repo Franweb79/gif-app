@@ -99,6 +99,7 @@ export class NavbarComponent implements OnInit {
 
 
 
+
    }else if(event.target.nodeName==="LI"){
 
     valueToInsert=event.target.innerText;
@@ -144,10 +145,12 @@ export class NavbarComponent implements OnInit {
       
       this.isClickable=true;
 
+      this._gifsService.getGiphyAPIData(valueToInsert);
+
+
 
     }
     
-     console.log(`test:${environment.apiURL}${environment.apiKey}`);
 
   }
 

@@ -14,7 +14,8 @@ import { NavbarComponent } from './shared-components/navbar/navbar.component';
   ],
   imports: [
     CommonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+   
   ],
   exports:[NavbarComponent]
     

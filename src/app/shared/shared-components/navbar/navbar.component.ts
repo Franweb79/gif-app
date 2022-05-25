@@ -147,7 +147,7 @@ export class NavbarComponent implements OnInit {
 
     }
     
-     console.log(`${environment.apiURL}${environment.apiKey}`);
+     console.log(`test:${environment.apiURL}${environment.apiKey}`);
 
   }
 

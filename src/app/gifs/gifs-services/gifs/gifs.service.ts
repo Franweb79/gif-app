@@ -39,7 +39,10 @@ export class GifsService {
 
     this.historicObserv$=new Observable<string[]>();
 
-    this.APIdata={}
+    this.APIdata=[]; /*it will sotre an array of objects, so despite it is any,
+    initialize as athe array it will be to avoid problems iterating with ngFor
+    */
+
 
 
   }
@@ -126,7 +129,7 @@ export class GifsService {
       console.log (data.data);
     },
 
-    err=>{
+    (err)=>{
       console.log (err);
     }
     );

@@ -6,11 +6,31 @@
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam nisi nec nulla fringilla, vulputate pellentesque risus maximus. Nunc iaculis tincidunt erat vitae molestie. Nullam pharetra libero turpis, a semper lectus tincidunt nec. Nullam tortor nisl, sollicitudin maximus dui et, aliquet tempus nisl. Aenean consequat blandit metus. Nulla pretium pharetra risus, eu aliquet mi dictum a. Nam porta, odio ut sodales tincidunt, nisl nibh tempus nulla, ut aliquam dui lacus quis ante. Aenean eget finibus purus, ac tincidunt odio. 
       </div>
     </div>
+
+    
+      <div class="row">
+        <div class="col">
+
+          <div *ngFor="let item of _gifsService.APIdata ">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  {{item.title }} 
+  
+  
+                </div>
+              </div>
+            </div>
+            
+
+          </div>
+          
+        </div>
+        
+      </div>
+    
 </div>
 
-<div *ngFor="let item of _gifsService.APIdata ; let i= index">
-  {{item.url}}
- 
-</div>
 
-<div *ngFor="let item of this._gifsService.historicObserv$ |async ">{{ item}}</div>
+
+<div *ngFor="let item of _gifsService.historicObserv$ | async ">{{ item}}</div>

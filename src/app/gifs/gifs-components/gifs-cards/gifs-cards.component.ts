@@ -13,4 +13,8 @@ export class GifsCardsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  fail(){
+    alert("hi");
+  }
+
 }

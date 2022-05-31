@@ -9,7 +9,10 @@ import { environment } from '../../../../environments/environment';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
   animations: [
-    // animation triggers go here
+    /*
+       animation triggers go here.
+    
+    */
     trigger('openClose',[
 
       state('history-open', style({
@@ -33,7 +36,11 @@ import { environment } from '../../../../environments/environment';
         
       })),
       transition('history-closed => history-open',[
-        animate('1s')
+        animate('0.5s')
+      ]),
+      transition('history-open => history-closed',[
+        animate('0.5s')
+
       ])
 
     ])
@@ -68,12 +75,21 @@ export class NavbarComponent implements OnInit {
 
   }
 
-  displaySearchHistory(){
+  /*
+    this method will toggle search history. When searchHistoryBox is opened,
+    another click on the seach box will hide the search box
+  */
+  toogleSearchHistory(){
 
 //TODO if I try to initalize this on consctructor doesn´t work, why?
     this.searchHistoryBox.style.display = "block";
 
-    this.isOpen=true;
+    if(this.isOpen===true){
+      this.isOpen=false;
+    }else{
+      this.isOpen=true;
+
+    }
 
     
   }
@@ -133,6 +149,12 @@ export class NavbarComponent implements OnInit {
       listElement!.style.color="red";
 
       this.isClickable=false;
+
+      /*
+        we set isOpen to true to make animation works (and thus, show the "enter valid search" text)
+        once we click search box with empty string
+      */
+      this.isOpen=true;
 
 
 

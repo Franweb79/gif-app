@@ -5,7 +5,7 @@
     border-radius: 0.25rem;
         
     z-index:1;
-    display:none; /*will be set to block on method displaySearchHistory()*/
+    display:none; /*will be set to block on method toogleSearchHistory()*/
 
 }
 

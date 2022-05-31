@@ -1,3 +1,14 @@
+## Style Guide
+
+Navbar component - border bottom:
+-     background-color: #FFC107;
+
+Gif Cards component - hover for social media icons
+
+-     background-color: #FFC107;
+
+
+
 ## Notes for developers
 
 ### Note 1

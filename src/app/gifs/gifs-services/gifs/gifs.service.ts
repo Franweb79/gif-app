@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Datum, GiphyResponse, Pagination } from '../../../interfaces/giphy-response-interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class GifsService {
   public historicObserv$:Observable<string[]>;
 
   //to store the data retrieved on getGiphyAPIData() 
-  public APIdata:any;
+  public APIdata:Datum[];
 
   constructor(private _http:HttpClient) { 
 
@@ -39,14 +40,32 @@ export class GifsService {
 
     this.historicObserv$=new Observable<string[]>();
 
-    this.APIdata=[]; /*it will sotre an array of objects, so despite it is any,
+   /* this.APIdata=[]; /*it will sotre an array of objects, so despite it is any,
     initialize as athe array it will be to avoid problems iterating with ngFor
     */
 
 
+    /*this.APIdata={
+      data:[],
+      pagination:{
+        total_count:0,
+        count:0,
+        offset:0
+      },
+      meta:{
+        status:0,
+        msg:"",
+        response_id:""
+
+      }
+    } */
+
+   // this.APIdata={} as GiphyResponse;
+
+   this.APIdata=[];
+
 
   }
-
 
   
   /*
@@ -122,16 +141,18 @@ export class GifsService {
 
     console.log(wholeQueryString);
 
-    this._http.get(wholeQueryString).subscribe(
-    (data:any)=>{
+    this._http.get<GiphyResponse>(wholeQueryString).subscribe(
+      (response)=>{
 
-      this.APIdata=data.data;
-      console.log (data.data);
-    },
+        this.APIdata=response.data;
 
-    (err)=>{
-      console.log (err);
-    }
+        
+        console.log (response);
+      },
+
+      (err)=>{
+        console.log (err);
+      }
     );
 
 

@@ -30,7 +30,9 @@ export class GifsService {
   public historicObserv$:Observable<string[]>;
 
   //to store the data retrieved on getGiphyAPIData() 
-  public APIdata:Datum[];
+ // public APIdata:Datum[];
+
+ public APIdata:any;
 
   constructor(private _http:HttpClient) { 
 
@@ -141,19 +143,22 @@ export class GifsService {
 
     console.log(wholeQueryString);
 
-    this._http.get<GiphyResponse>(wholeQueryString).subscribe(
-      (response)=>{
+    this._http.get(wholeQueryString).subscribe({
+      next: (response:any)=>{
 
         this.APIdata=response.data;
 
         
         console.log (response);
       },
-
-      (err)=>{
+      error: (err)=>{
         console.log (err);
       }
-    );
+    });
+      
+
+      
+  
 
 
 

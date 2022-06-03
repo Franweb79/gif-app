@@ -3,7 +3,7 @@
 //
 //   import { Convert, GiphyResponse } from "./file";
 //
-//   const giphyResponse = Convert.toGiphyResponse(json);
+//   const GiphyResponse = Convert.toGiphyResponse(json);
 //
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
@@ -147,7 +147,7 @@ export class Convert {
         return cast(JSON.parse(json), r("GiphyResponse"));
     }
 
-    public static giphyResponseToJson(value: GiphyResponse): string {
+    public static GiphyResponseToJson(value: GiphyResponse): string {
         return JSON.stringify(uncast(value, r("GiphyResponse")), null, 2);
     }
 }

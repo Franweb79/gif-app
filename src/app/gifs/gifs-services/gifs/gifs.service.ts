@@ -32,7 +32,7 @@ export class GifsService {
   //to store the data retrieved on getGiphyAPIData() 
  // public APIdata:Datum[];
 
- public APIdata:any;
+ public APIdata:Datum[];
 
   constructor(private _http:HttpClient) { 
 
@@ -141,10 +141,10 @@ export class GifsService {
 
     let wholeQueryString:string=`${environment.apiURL}${environment.apiKey}&limit=10&q=${searchQueryParameter}`;
 
-    console.log(wholeQueryString);
+   
 
-    this._http.get(wholeQueryString).subscribe({
-      next: (response:any)=>{
+    this._http.get<GiphyResponse>(wholeQueryString).subscribe({
+      next: (response:GiphyResponse)=>{
 
         this.APIdata=response.data;
 

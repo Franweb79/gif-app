@@ -32,7 +32,7 @@ export class GifsService {
   //to store the data retrieved on getGiphyAPIData() 
  // public APIdata:Datum[];
 
- public APIdata:Datum[];
+  public APIdata:Datum[];
 
   constructor(private _http:HttpClient) { 
 
@@ -42,29 +42,7 @@ export class GifsService {
 
     this.historicObserv$=new Observable<string[]>();
 
-   /* this.APIdata=[]; /*it will sotre an array of objects, so despite it is any,
-    initialize as athe array it will be to avoid problems iterating with ngFor
-    */
-
-
-    /*this.APIdata={
-      data:[],
-      pagination:{
-        total_count:0,
-        count:0,
-        offset:0
-      },
-      meta:{
-        status:0,
-        msg:"",
-        response_id:""
-
-      }
-    } */
-
-   // this.APIdata={} as GiphyResponse;
-
-   this.APIdata=[];
+    this.APIdata=[];
 
 
   }

@@ -25,3 +25,5 @@ As the next time we invoke the insertValueHistoric (when we make a new search), 
 We will not only insert the value, but will make all the logic to show it on the html, also insert it on the local storage We want to show the newest search items on the first place, so we will have to reverse the array which contain the historic(_historic)
 
 We don´t want to modify the original array, it would give lots of problems when reversing several times and such, I think it is better always having a reference to the original array with no modifications
+
+//TODO CAMBIA LOS DATOS DE LA APP D EFACEBOOK EN FACEBOOK DEVELOPERS, las URL de politica de privacidad y eso. INFORMATE BIEN DE ESO.TB LO LA TIENE QUE APROBAr fb para mostrarla en el centro de apps. pone que mal configurada.

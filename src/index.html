@@ -9,6 +9,17 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '1428540620991492',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v14.0'
+      });
+    };
+  </script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
   <app-root></app-root>
 </body>
 </html>

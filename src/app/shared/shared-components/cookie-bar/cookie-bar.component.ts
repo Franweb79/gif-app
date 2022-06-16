@@ -71,8 +71,8 @@ export class CookieBarComponent implements OnInit {
   ngOnInit() {
 
     //if there is no cookie 
-//TODO cambia esa url
-    if(!this._cookies.check('movie-searcher.avanzartewebs.com')){
+
+    if(!this._cookies.check('gif-searcher.avanzartewebs.com')){
 
       /*if there is no cookie, we check if state is set to initial to display animation in 1500ms
 
@@ -107,8 +107,8 @@ export class CookieBarComponent implements OnInit {
 
     this.changeState();
 
-    //TODO cambia esa url
-    this._cookies.set( 'movie-searcher.avanzartewebs.com', 'Cookie consent accepted',7 );
+    
+    this._cookies.set( 'gif-searcher.avanzartewebs.com', 'Cookie consent accepted',7 );
 
     //alert("set cookie and hide");
 

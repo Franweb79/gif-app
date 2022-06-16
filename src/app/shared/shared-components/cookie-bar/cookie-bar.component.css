@@ -1,0 +1,47 @@
+
+@media only screen and (max-width:  765px){
+    .cookies-bar{
+
+        display:flex !important;
+        flex-wrap: wrap !important;
+    }
+
+    .child{
+        flex-direction: column !important;
+        flex-basis: 100% !important;
+        margin: .5rem;
+    }
+}
+
+.cookies-bar{
+    position:fixed;
+    background-color: #15b000;
+    color:#fff;
+    width:100%;
+    bottom: 0;
+    right: 0;
+    padding:1em;
+}
+
+.cookies-bar-link{
+    color:#fff;
+    text-decoration: underline;
+}
+
+
+.btn-cookies{
+    color:#fff;
+    border:1px solid #fff;
+    padding:1em;
+    border-radius:3px;
+    margin-left:2em;
+    margin-right:2em;
+    transition:background .5s;
+    transition:color .5s;
+}
+
+.btn-cookies:hover{
+    color:#15b000;
+    border:1px solid #15b000;
+    background:  #fff;
+}

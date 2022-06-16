@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { GifsService } from './gifs/gifs-services/gifs/gifs.service';
 
@@ -12,7 +13,11 @@ export class AppComponent implements OnInit {
   
   title = 'gif-app';
 
-  constructor(public _gifsService:GifsService){
+  constructor(public _gifsService:GifsService, private _translate: TranslateService){
+
+    _translate.setDefaultLang('en');
+
+    _translate.use('en');
     
   }
 

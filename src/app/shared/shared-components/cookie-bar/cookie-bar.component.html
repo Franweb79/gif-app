@@ -1,0 +1,4 @@
+<div [@showOrHide]="currentState" class="cookies-bar"> <span class="child"> {{'CookieBarComponent.CookieConsentText' | translate}} <a class="cookies-bar-link" routerLink="/cookies" >Link</a> </span>
+    <button class="btn btn-cookies child" (click)="setCookieAndHideBanner()">{{'CookieBarComponent.AcceptButtonText' | translate}}</button>
+    <button class="btn btn-cookies child" (click)="onlyHideBanner()">{{'CookieBarComponent.DontAcceptButtonText' | translate}}</button>  
+</div>

@@ -9,6 +9,7 @@ import { NavbarComponent } from './shared-components/navbar/navbar.component';
 import { CookieBarComponent } from './shared-components/cookie-bar/cookie-bar.component';
 import { CookiesComponent } from './shared-components/cookies/cookies.component';
 import { PrivacyComponent } from './shared-components/privacy/privacy.component';
+import { LegalComponent } from './shared-components/legal/legal.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PrivacyComponent } from './shared-components/privacy/privacy.component'
     NavbarComponent,
     CookieBarComponent,
     CookiesComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    LegalComponent
   ],
   imports: [
     CommonModule,

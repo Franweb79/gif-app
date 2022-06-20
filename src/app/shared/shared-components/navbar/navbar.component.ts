@@ -160,14 +160,50 @@ export class NavbarComponent implements OnInit {
 
     }else{
 
-      this._gifsService.insertValueHistoric(valueToInsert);
-      this.searchElement.nativeElement.value="";
+      //check if value already exists on search history
 
-      listElement!.style.color="black";
-      
-      this.isClickable=true;
+      let isValueOnHistory=false;
+
+      //we get the observable with history. It contains an array with all results
+
+      this._gifsService.historicObserv$.forEach(arrayWithAllResults=>{
+
+        /*
+          for each value inside the array, we check if current value to insert is already in historic.
+          If it is not, we add to historic. In case it is, we include not
+
+        */
+        arrayWithAllResults.forEach(currentValue=>{
+          if(currentValue===valueToInsert){
+
+            isValueOnHistory=true;
+          }
+        });
+        
+
+     
+
+      });
+
+
+      //as said, If value is not in historic, we add to historic. In case it is, we include not
+      if(isValueOnHistory===false){
+
+        this._gifsService.insertValueHistoric(valueToInsert);
+        this.searchElement.nativeElement.value="";
+  
+        listElement!.style.color="black";
+        
+        this.isClickable=true;
+  
+        
+
+      }
 
       this._gifsService.getGiphyAPIData(valueToInsert);
+      
+
+     
 
 
 

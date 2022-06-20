@@ -54,7 +54,7 @@ export class GifsService {
     SEE README´s "notes for developers" number 2
 
     //TODO make a test of this method, we insert 5 values and must return
-    an array with reversed data "9,8,7,6,5" and if we insert another value
+    an array with reversed data "9,8,7,6,5" and if we insert another value (a)
     the 5 must dissappear and must come new one e.g. "a,9,8,7,6"
 
   */

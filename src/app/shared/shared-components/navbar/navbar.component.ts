@@ -99,6 +99,7 @@ export class NavbarComponent implements OnInit {
   //TODO look for proper type for event, to make target.value work
   search(event:any){
 
+    //we could perform a search on another route, so back to main to show results
     this._router.navigate(['/main']);
 
     /*

@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { GifsService } from 'src/app/gifs/gifs-services/gifs/gifs.service';
 import { environment } from '../../../../environments/environment';
@@ -58,7 +59,7 @@ export class NavbarComponent implements OnInit {
   public isClickable:boolean;
 
   
-  constructor(public _gifsService:GifsService) { 
+  constructor(public _gifsService:GifsService, private _router:Router) { 
    
     this.isOpen=false;
 
@@ -97,6 +98,8 @@ export class NavbarComponent implements OnInit {
   //TODO make a test of this method, when we enter a search and push enter
   //TODO look for proper type for event, to make target.value work
   search(event:any){
+
+    this._router.navigate(['/main']);
 
     /*
       we have to specify it could be undefined to avoid this error

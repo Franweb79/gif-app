@@ -21,6 +21,7 @@
     bottom: 0;
     right: 0;
     padding:1em;
+    z-index: 1;
 }
 
 .cookies-bar-link{

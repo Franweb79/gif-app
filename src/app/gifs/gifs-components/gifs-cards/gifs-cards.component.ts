@@ -16,6 +16,8 @@ export class GifsCardsComponent implements OnInit {
 
   ngOnInit(): void {
 
+    //TODO get random value for "come here"
+
     console.log (this._gifsService.isSomethingSearched);
   }
 

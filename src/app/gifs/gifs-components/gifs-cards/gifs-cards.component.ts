@@ -10,9 +10,13 @@ import { SocialService } from '../../gifs-services/social-service/social.service
 export class GifsCardsComponent implements OnInit {
 
   constructor(public _gifsService:GifsService,
-              public _social:SocialService) { }
+              public _social:SocialService) {
+
+  }
 
   ngOnInit(): void {
+
+    console.log (this._gifsService.isSomethingSearched);
   }
 
   fail(){

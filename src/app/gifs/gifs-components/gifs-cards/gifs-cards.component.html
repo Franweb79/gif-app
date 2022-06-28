@@ -1,33 +1,52 @@
 <div class="container p-3">
     
 
-    
-      <div class="row">
-        <div class="col-sm-6" *ngFor="let item of _gifsService.APIdata; let i=index ">
+      <!-- if app is just opened, show welcome, if something is searched, show search results -->
 
-            <div class="card rounded mb-3">
-              
-              <img src="{{item.images.downsized_medium.url}}" height="300" alt="{{item.title}}"/>
+      <div class="row align-items-center" *ngIf="!_gifsService.isSomethingSearched;else searchResults">
 
-              <!--{{item.images.downsized_medium.url}}-->
-              <div class="card-body">
-                
-                  <p class="card-title"><b>{{item.title}}</b></p>
-                  <p><b>Share with your preferred social network:</b></p>
-                  <i class="fa fa-facebook-square fa-2x icons-in-card" (click)="_social.share('facebook',item.images.downsized_medium.url)"></i>
-                  <i class="fa fa-tumblr-square fa-2x icons-in-card" ></i>
-                  <i class="fa fa-twitter-square fa-2x icons-in-card" ></i>
-                
-              </div>
-            </div>
-          
-          </div>
+        <div class="col"></div>
 
-          
-          
-        
-        
+        <div class="col">welcome</div>
+
+        <div class="col"></div>
+
       </div>
+
+      <ng-template #searchResults>
+
+        <div class="row">
+
+
+        
+          <div class="col-sm-6" *ngFor="let item of _gifsService.APIdata; let i=index ">
+  
+              <div class="card rounded mb-3">
+                
+                <img src="{{item.images.downsized_medium.url}}" height="300" alt="{{item.title}}"/>
+  
+                <!--{{item.images.downsized_medium.url}}-->
+                <div class="card-body">
+                  
+                    <p class="card-title"><b>{{item.title}}</b></p>
+                    <p><b>Share with your preferred social network:</b></p>
+                    <i class="fa fa-facebook-square fa-2x icons-in-card" (click)="_social.share('facebook',item.images.downsized_medium.url)"></i>
+                    <i class="fa fa-tumblr-square fa-2x icons-in-card" ></i>
+                    <i class="fa fa-twitter-square fa-2x icons-in-card" ></i>
+                  
+                </div>
+              </div>
+            
+            </div>
+  
+            
+            
+          
+          
+        </div>
+      </ng-template>
+    
+      
     
 </div>
 

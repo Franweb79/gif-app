@@ -21,6 +21,15 @@ export class GifsService {
 
   public _historic:string[];
 
+  /*
+    will check if we have just opened our app -no search-, to show welcome
+
+    it we search something, we will set to true, then show search result and no welcome screen
+
+  */
+ 
+  public isSomethingSearched:boolean;
+
   // we declare a property to store the reversed array.
 
 
@@ -37,6 +46,8 @@ export class GifsService {
   constructor(private _http:HttpClient) { 
 
     this._historic=[];
+
+    this.isSomethingSearched=false;
 
     this.reversedArray=[];
 
@@ -126,6 +137,14 @@ export class GifsService {
 
         this.APIdata=response.data;
 
+        /*
+        
+          once we have data -pictures- to show, we set value of 
+          isSomethingSearched to true, then welcome screen is not shown again
+
+        */
+
+        this.isSomethingSearched=true;
         
         console.log (response);
       },

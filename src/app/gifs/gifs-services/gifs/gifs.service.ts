@@ -27,7 +27,7 @@ export class GifsService {
     it we search something, we will set to true, then show search result and no welcome screen
 
   */
- 
+
   public isSomethingSearched:boolean;
 
   // we declare a property to store the reversed array.
@@ -43,6 +43,7 @@ export class GifsService {
 
   public APIdata:Datum[];
 
+
   constructor(private _http:HttpClient) { 
 
     this._historic=[];
@@ -54,6 +55,10 @@ export class GifsService {
     this.historicObserv$=new Observable<string[]>();
 
     this.APIdata=[];
+
+    
+
+    
 
 
   }
@@ -128,7 +133,7 @@ export class GifsService {
 
     let searchQueryParameter=`${searchText}`;
 
-    let wholeQueryString:string=`${environment.apiURL}${environment.apiKey}&limit=10&q=${searchQueryParameter}`;
+    let wholeQueryString:string=`${environment.apisearchURL}${environment.apiKey}&limit=10&q=${searchQueryParameter}`;
 
    
 
@@ -149,15 +154,38 @@ export class GifsService {
         console.log (response);
       },
       error: (err)=>{
+        console.log(`there is one error fetching data from Giphy API`)
         console.log (err);
       }
     });
-      
 
-      
+
+  }
+
+  getRandomResult(searchText:string):void{
+
+    let searchQueryParameter=`${searchText}`;
+
+    let wholeQueryString:string=`${environment.apiRandomURL}${environment.apiKey}&tag=${searchQueryParameter}&rating=g`;
+
+
+    this._http.get<GiphyResponse>(wholeQueryString).subscribe({
+      next: (response:GiphyResponse)=>{
+
+        this.APIdata=response.data;
+
+
+        
+        console.log (response);
+      },
+      error: (err)=>{
+        console.log(`there is one error fetching data from Giphy API`)
+        console.log (err);
+      }
+    });
+
+
   
-
-
 
   }
 

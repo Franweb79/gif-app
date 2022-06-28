@@ -18,6 +18,8 @@ export class GifsCardsComponent implements OnInit {
 
     //TODO get random value for "come here"
 
+    this._gifsService.getRandomResult('welcome');
+
     console.log (this._gifsService.isSomethingSearched);
   }
 

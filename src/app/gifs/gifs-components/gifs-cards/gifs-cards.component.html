@@ -7,7 +7,16 @@
 
         <div class="col"></div>
 
-        <div class="col" id="welcomeColumn">welcome</div>
+        <div class="col" id="welcomeColumn">welcome
+           <div class="card rounded mb-3" *ngFor="let item of _gifsService.APIdata; let i=index">
+
+            {{item | json}}
+            <img src="{{item.images.downsized_medium.url}}" height="300" alt="{{item.title}}"/>
+  
+                <!--{{item.images.downsized_medium.url}}-->
+                
+           </div>
+        </div>
 
         <div class="col"></div>
 

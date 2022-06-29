@@ -8,10 +8,12 @@
         <div class="col"></div>
 
         <div class="col" id="welcomeColumn">welcome
-           <div class="card rounded mb-3"  >
 
-           <!-- {{_gifsService.GiphyRandomGIFResponse | json}}-->
-            <img src="{{_gifsService.GiphyRandomGIFResponse.images.downsized_medium.url}}" height="300" alt="{{_gifsService.GiphyRandomGIFResponse.title}}"/>
+          <!-- with AS keyword we can use a more readable alias for the  _gifsService.GiphyRandomGIFResponse -->
+           <div class="card rounded mb-3" *ngIf=" _gifsService.GiphyRandomGIFResponse as randomResponse"  >
+
+           <!-- //TODO apunta lo del as keyword como alias para evitar toda esa mierda de _gifsService... -->
+            <img src="{{randomResponse.images.downsized_medium.url}}" height="300" alt="{{randomResponse.title}}"/>
   
                 <!--{{item.images.downsized_medium.url}}-->
                 

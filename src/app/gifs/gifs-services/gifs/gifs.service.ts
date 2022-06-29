@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Datum, GiphyResponse, Pagination } from '../../../interfaces/giphy-response-interfaces';
+import { Data, GiphyRandomGIFResponse } from '../../../interfaces/giphy-random-gif-response';
 
 @Injectable({
   providedIn: 'root'
@@ -43,6 +44,8 @@ export class GifsService {
 
   public APIdata:Datum[];
 
+  public GiphyRandomGIFResponse!:Data;
+
 
   constructor(private _http:HttpClient) { 
 
@@ -55,6 +58,8 @@ export class GifsService {
     this.historicObserv$=new Observable<string[]>();
 
     this.APIdata=[];
+
+   
 
     
 
@@ -169,13 +174,13 @@ export class GifsService {
     let wholeQueryString:string=`${environment.apiRandomURL}${environment.apiKey}&tag=${searchQueryParameter}&rating=g`;
 
 
-    this._http.get<GiphyResponse>(wholeQueryString).subscribe({
-      next: (response:GiphyResponse)=>{
+    this._http.get<GiphyRandomGIFResponse>(wholeQueryString).subscribe({
+      next: (response:GiphyRandomGIFResponse)=>{
 
-        this.APIdata=response.data;
+        this.GiphyRandomGIFResponse=response.data;
 
 
-        
+        console.log ("random")
         console.log (response);
       },
       error: (err)=>{

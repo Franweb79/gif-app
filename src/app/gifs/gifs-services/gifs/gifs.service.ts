@@ -140,8 +140,7 @@ export class GifsService {
 
     let wholeQueryString:string=`${environment.apisearchURL}${environment.apiKey}&limit=10&q=${searchQueryParameter}`;
 
-   
-
+  
     this._http.get<GiphyResponse>(wholeQueryString).subscribe({
       next: (response:GiphyResponse)=>{
 

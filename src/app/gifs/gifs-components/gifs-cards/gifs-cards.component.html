@@ -40,11 +40,15 @@
                 <div class="card-body">
                   
                     <p class="card-title"><b>{{item.title}}</b></p>
+
+                   
                     <p><b>Share with your preferred social network:</b></p>
-                    <i class="fa fa-facebook-square fa-2x icons-in-card" (click)="_social.share('facebook',item.images.downsized_medium.url)"></i>
-                    <i class="fa fa-tumblr-square fa-2x icons-in-card" ></i>
-                    <i class="fa fa-twitter-square fa-2x icons-in-card" ></i>
-                  
+                    <div>
+                    <i class="fa fa-facebook-square fa-3x icons-in-card" (click)="_social.share('facebook',item.images.downsized_medium.url)"></i>
+                    <i class="fa fa-tumblr-square fa-3x icons-in-card" ></i>
+                    <i class="fa fa-twitter-square fa-3x icons-in-card" ></i>
+                    <button type="button" style="display:block" class="btn custom-button">Copy link</button>   
+                  </div>               
                 </div>
               </div>
             

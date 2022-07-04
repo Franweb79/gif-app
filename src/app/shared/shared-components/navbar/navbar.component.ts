@@ -207,6 +207,8 @@ export class NavbarComponent implements OnInit {
       this._gifsService.getGiphyAPIData(valueToInsert);
       
 
+      //we close the history element once search is done, isOpen controls the animation
+      this.isOpen=false;
      
 
 

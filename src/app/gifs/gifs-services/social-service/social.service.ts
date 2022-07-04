@@ -4,10 +4,20 @@ import { Injectable } from '@angular/core';
 declare var window: any;
 declare var FB: any;
 
+ 
+
 @Injectable({
   providedIn: 'root'
 })
 export class SocialService {
+
+  /*
+    property to control copy to clipboard and show a text if copied,
+    through an animation
+    
+  */
+
+  public isCopied=false;
 
   constructor() { }
 
@@ -58,5 +68,19 @@ export class SocialService {
 
 
     }
+  }
+
+  //https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+  copyLinkToClipBoard(stringToBePassed:string){
+    let textToCopy;
+    //alert("cop"+stringToBePassed);
+
+    navigator.clipboard.writeText(stringToBePassed);
+
+    this.isCopied=true;
+
+    setTimeout(()=>{
+      this.isCopied=false;
+    },2000);
   }
 }

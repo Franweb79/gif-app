@@ -49,10 +49,13 @@
                     <i class="fa fa-twitter-square fa-3x icons-in-card" ></i>
 
                     <!-- this container is only to make button properly appear and aligned under the social media buttons-->
-                    <div>
+                    <div >
 
-                      <button type="button" style="display:inline-block" class="btn custom-button" (click)="copyLinkToClipBoard(item.images.downsized_medium.url)">Copy link</button>   
-                      <span class="btn is-copied-div" #spanElementRef >Link copied!</span>
+                     <!-- <span style="display:inline-block">Copy Link</span>-->
+
+                     <div class="btn custom-button" (click)="copyLinkToClipBoard(item.images.downsized_medium.url,$event)">Copy link</div>
+
+                     <div class="btn is-copied-div">Link copied!</div>
 
                       <!--
 

@@ -49,19 +49,25 @@ export class GifsCardsComponent implements OnInit {
   }
 
   //https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
-  copyLinkToClipBoard(stringToBePassed:string){
+  copyLinkToClipBoard(stringToBePassed:string, event:any){
     let textToCopy;
     //alert("cop"+stringToBePassed);
 
     navigator.clipboard.writeText(stringToBePassed);
 
-    this._renderer2.setStyle(this.buttonCopiedSpanText.nativeElement,'opacity','1');
+    event.target.parentElement.children[1].style.opacity='1';
+   console.log (event.target.parentElement.children[1]);
+
+   // this._renderer2.setStyle(this.buttonCopiedSpanText.nativeElement,'opacity','1');
 
     //this.isCopied=true;
 
-    /*setTimeout(()=>{
-      this.isCopied=false;
-    },2000);*/
+    setTimeout(()=>{
+      //this.isCopied=false;
+
+      event.target.parentElement.children[1].style.opacity='0';
+
+    },2000);
   }
 
  

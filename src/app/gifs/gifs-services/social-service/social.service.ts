@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ElementRef, ViewChild, Renderer2 } from '@angular/core';
 
 //TODO mira que es esto de declare
 declare var window: any;
@@ -19,6 +19,7 @@ export class SocialService {
 
   public isCopied=false;
 
+
   constructor() { }
 
   share(socialNetWorkName:string, urlString:string){
@@ -26,6 +27,7 @@ export class SocialService {
     if(socialNetWorkName==='facebook'){
      // alert("share facebook");
 
+     //TODO lo del FB mira arriba eso del declare var
       FB.ui({
 
         method: 'share_open_graph',
@@ -70,17 +72,5 @@ export class SocialService {
     }
   }
 
-  //https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
-  copyLinkToClipBoard(stringToBePassed:string){
-    let textToCopy;
-    //alert("cop"+stringToBePassed);
-
-    navigator.clipboard.writeText(stringToBePassed);
-
-    this.isCopied=true;
-
-    setTimeout(()=>{
-      this.isCopied=false;
-    },2000);
-  }
+  
 }

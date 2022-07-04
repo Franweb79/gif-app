@@ -1,5 +1,5 @@
 import { state, style, trigger, transition, animate } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { GifsService } from '../../gifs-services/gifs/gifs.service';
 import { SocialService } from '../../gifs-services/social-service/social.service';
 
@@ -7,11 +7,8 @@ import { SocialService } from '../../gifs-services/social-service/social.service
   selector: 'app-gifs-cards',
   templateUrl: './gifs-cards.component.html',
   styleUrls: ['./gifs-cards.component.css'],
-  animations:[
-      /*
-       animation triggers go here.
-    
-    */
+  /*animations:[
+      
    trigger('hideShowButton',[
 
     state('hide-button',style({
@@ -28,15 +25,17 @@ import { SocialService } from '../../gifs-services/social-service/social.service
     ]),
 
    ])
-  ]
+  ]*/
 })
 export class GifsCardsComponent implements OnInit {
 
  
-  
+  @ViewChild('spanElementRef') buttonCopiedSpanText!:ElementRef; 
+
   
   constructor(public _gifsService:GifsService,
-              public _social:SocialService) {
+              public _social:SocialService,
+              public _renderer2:Renderer2) {
 
   }
 
@@ -47,6 +46,22 @@ export class GifsCardsComponent implements OnInit {
     this._gifsService.getRandomResult('welcome');
 
     console.log (this._gifsService.isSomethingSearched);
+  }
+
+  //https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+  copyLinkToClipBoard(stringToBePassed:string){
+    let textToCopy;
+    //alert("cop"+stringToBePassed);
+
+    navigator.clipboard.writeText(stringToBePassed);
+
+    this._renderer2.setStyle(this.buttonCopiedSpanText.nativeElement,'opacity','1');
+
+    //this.isCopied=true;
+
+    /*setTimeout(()=>{
+      this.isCopied=false;
+    },2000);*/
   }
 
  

@@ -6,26 +6,8 @@ import { SocialService } from '../../gifs-services/social-service/social.service
 @Component({
   selector: 'app-gifs-cards',
   templateUrl: './gifs-cards.component.html',
-  styleUrls: ['./gifs-cards.component.css'],
-  /*animations:[
-      
-   trigger('hideShowButton',[
-
-    state('hide-button',style({
-      opacity:0
-    })),
-    state('show-button',style({
-      opacity:1
-    })),
-    transition('hide-button => show-button',[
-      animate('0.2s')
-    ]),
-    transition('show-button => hide-button',[
-      animate('0.2s')
-    ]),
-
-   ])
-  ]*/
+  styleUrls: ['./gifs-cards.component.css']
+ 
 })
 export class GifsCardsComponent implements OnInit {
 
@@ -55,15 +37,12 @@ export class GifsCardsComponent implements OnInit {
 
     navigator.clipboard.writeText(stringToBePassed);
 
+    //show "copied link" box
     event.target.parentElement.children[1].style.opacity='1';
-   console.log (event.target.parentElement.children[1]);
 
-   // this._renderer2.setStyle(this.buttonCopiedSpanText.nativeElement,'opacity','1');
-
-    //this.isCopied=true;
+    //hide "copied link" box after certain time
 
     setTimeout(()=>{
-      //this.isCopied=false;
 
       event.target.parentElement.children[1].style.opacity='0';
 

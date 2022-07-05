@@ -43,31 +43,15 @@ export class SocialService {
 
         })
         
-       /* method:'share',
-        href:urlString*/
-
+       
           /* TODO https://stackoverflow.com/questions/10444347/share-link-to-posts-when-using-fb-ui*/
         })
 
-        /*
+    }else if(socialNetWorkName==='twitter'){
 
-        method: 'share_open_graph',
-        action_type:'og.shares',
-        action_properties: JSON.stringify({
-          object : {
-             'og:url': urlString, // your url to share,
-             'og_image':urlString
-            
-             
-             
-          }
+      let twitterUrl=`https://twitter.com/intent/tweet?url=${urlString}&hashtags=gifsearcher,avanzartewebs&via=FranDeveloper79`;
 
-        });
-        */
-        /*href: urlString,
-        quote: "Hi there"*/
-      
-
+      window.open(twitterUrl,'_blank');
 
     }
   }

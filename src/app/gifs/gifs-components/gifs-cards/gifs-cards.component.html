@@ -44,9 +44,10 @@
                    
                     <p><b>Share with your preferred social network:</b></p>
                     <div>
-                    <i class="fa fa-facebook-square fa-3x icons-in-card" (click)="_social.share('facebook',item.images.downsized_medium.url)"></i>
-                    <i class="fa fa-tumblr-square fa-3x icons-in-card" ></i>
-                    <i class="fa fa-twitter-square fa-3x icons-in-card" ></i>
+                      <i class="fa fa-facebook-square fa-3x icons-in-card" (click)="_social.share('facebook',item.images.downsized_medium.url)"></i>
+                      <i class="fa fa-tumblr-square fa-3x icons-in-card" ></i>
+
+                      <a href="https://twitter.com/intent/tweet?url={{item.url}}"><i class="fa fa-twitter-square fa-3x icons-in-card"></i></a>
                    
 
                     <a class="twitter-share-button"

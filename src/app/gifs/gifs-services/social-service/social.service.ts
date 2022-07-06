@@ -53,6 +53,18 @@ export class SocialService {
 
       window.open(twitterUrl,'_blank');
 
+    }else if(socialNetWorkName==='tumblr'){
+
+      let tags="avanzartewebs.com,gifsearcher.avanzartewebs.com,giphy,Twitter:@FranDeveloper79,@FranDeveloper79";
+      let postType="photo";
+
+      let tumblrUrl="https://www.tumblr.com/share";
+
+      let totalUrl=`${tumblrUrl}?posttype=${postType}&url=${urlString}&tags=${tags}`;
+
+      window.open(totalUrl,'_blank');
+
+
     }
   }
 

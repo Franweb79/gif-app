@@ -44,12 +44,13 @@
                    
                     <p><b>Share with your preferred social network:</b></p>
                     <div>
+
+                      <!--TODO test botones-->
                       <i class="fa fa-facebook-square fa-3x icons-in-card" (click)="_social.share('facebook',item.images.downsized_medium.url)"></i>
-                      <i class="fa fa-tumblr-square fa-3x icons-in-card" ></i>
+                      <i class="fa fa-tumblr-square fa-3x icons-in-card" (click)="_social.share('tumblr',item.images.downsized_medium.url)"></i>
 
                       <i class="fa fa-twitter-square fa-3x icons-in-card" (click)="_social.share('twitter',item.url)"></i>
                    
-                      <a class="tumblr-share-button" target="_blank" href="https://www.tumblr.com/share?posttype=photo&shareSource=https://gifsearcher.avanzartewebs.com&url={{item.images.downsized_medium.url}}&tags=avanzartewebs.com,gifsearcher.avanzartewebs.com,giphy,Twitter:@FranDeveloper79,@FranDeveloper79">tuu</a>
              
 
                     <!-- this div container is to reference later as parent element oh the "link coppied!" element and be able to show ONLY in the box where we have pushed "copy link", not all of them-->

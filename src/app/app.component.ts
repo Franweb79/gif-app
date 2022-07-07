@@ -13,11 +13,18 @@ export class AppComponent implements OnInit {
   
   title = 'gif-app';
 
-  constructor(public _gifsService:GifsService, private _translate: TranslateService){
+  constructor(public _gifsService:GifsService, public _translate: TranslateService){
 
-    _translate.setDefaultLang('en');
+    _translate.addLangs(['en', 'de']);
 
-    _translate.use('en');
+   _translate.setDefaultLang('en');
+
+   let browserLang = _translate.getBrowserLang();
+
+   //TODO explica y copia bien esto, le hemos tenifo que poner el ! ademas
+    _translate.use(browserLang!);
+
+  // _translate.use('de');
     
   }
 

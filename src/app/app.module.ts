@@ -32,7 +32,7 @@ export function HttpLoaderFactory(_http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       },
-      defaultLanguage: 'en'
+     // defaultLanguage: 'en'
     })
   ],
   providers: [],

@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
   constructor(public _gifsService:GifsService, public _translate: TranslateService){
 
-    _translate.addLangs(['en', 'de']);
+   // _translate.addLangs(['en', 'de']);
 
    _translate.setDefaultLang('en');
 

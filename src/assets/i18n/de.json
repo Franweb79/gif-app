@@ -1,10 +1,13 @@
 {
     "CookieBarComponent":{
-        "CookieConsentText":"Diese Seite verwendet Cookies, mehr Info dazu ",
-        "AcceptButtonText":"annehmen",
+        "CookieConsentText":"Diese Seite verwendet Cookies, mehr Info dazu (auf Englisch)",
+        "AcceptButtonText":"akzeptieren",
         "DontAcceptButtonText": "ablehnen"
 
 
+    },
+    "NavBarComponent":{
+        "AboutMeText":"Über Mich"
     }
 
 }

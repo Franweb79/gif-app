@@ -5,6 +5,9 @@
         "DontAcceptButtonText": "I don´t accept"
 
 
+    },
+    "NavBarComponent":{
+        "AboutMeText":"About Me"
     }
 
 }

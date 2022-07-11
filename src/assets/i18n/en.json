@@ -7,7 +7,9 @@
 
     },
     "NavBarComponent":{
-        "AboutMeText":"About Me"
+        "AboutMeText":"About Me",
+        "PrivacyText":"Privacy Policy",
+        "SearchText": "Search Gifs..."
     }
 
 }

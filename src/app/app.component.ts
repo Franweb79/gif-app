@@ -15,16 +15,16 @@ export class AppComponent implements OnInit {
 
   constructor(public _gifsService:GifsService, public _translate: TranslateService){
 
-   // _translate.addLangs(['en', 'de']);
+   
 
    _translate.setDefaultLang('en');
 
    let browserLang = _translate.getBrowserLang();
 
-   //TODO explica y copia bien esto, le hemos tenifo que poner el ! ademas
-    _translate.use(browserLang!);
+  
+//we had to use the null assetion operator ! because getBrowserLang can be string or undefined
+   _translate.use(browserLang!);
 
-  // _translate.use('de');
     
   }
 
@@ -47,14 +47,7 @@ export class AppComponent implements OnInit {
 
         //TODO make non null assertion operator ! work and delete the any;
   
-        /*
-          TODO make a test for this. Test should be we have a localstorage with "9,8,7,6,5"
-  
-          when we close window and open it again, and make another search, we shoudl have
-  
-          for example "a (the new search),9,8,7,6"
-  
-        */
+        
   
         /*
           we imagine we have data stored on localStorage as "9,8,7,6,5" 

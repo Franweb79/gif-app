@@ -24,10 +24,14 @@ import { LegalComponent } from './shared-components/legal/legal.component';
     CommonModule,
     RouterModule,
     BrowserAnimationsModule,
-    TranslateModule //TODO PON QUE TUVISTE QUE PONERLO AQUI TB EN EL SHARED MODULE PA QUE 
-    //TRANSLATE PIPE EN EL HTML DEL COOKIE BAR NO DIERA ERROR
+    TranslateModule /* I had to put this TranslateModule also here because 
+    otherwise the translate pipe on the cookie bar (cookie bar component is imported and exported in this module),
+    would give error
 
+    
     //https://stackoverflow.com/a/68301637/6791921
+
+  */
    
   ],
   exports:[

@@ -95,7 +95,6 @@ export class NavbarComponent implements OnInit {
     
   }
 
-  //TODO make a test of this method, when we enter a search and push enter
   //TODO look for proper type for event, to make target.value work
   search(event:any){
 
@@ -103,7 +102,7 @@ export class NavbarComponent implements OnInit {
     this._router.navigate(['/main']);
 
     /*
-      we have to specify it could be undefined to avoid this error
+      we have to specify valueToInsert could be undefined to avoid this error
 
       https://bobbyhadz.com/blog/typescript-variable-is-used-before-being-assigned
 

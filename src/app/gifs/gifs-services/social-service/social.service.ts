@@ -71,7 +71,6 @@ export class SocialService {
    //https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
   copyLinkToClipBoard(stringToBePassed:string, event:any){
     let textToCopy;
-    //alert("cop"+stringToBePassed);
 
     navigator.clipboard.writeText(stringToBePassed);
 

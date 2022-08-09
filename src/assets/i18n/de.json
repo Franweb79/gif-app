@@ -16,6 +16,7 @@
         "WelcomePar":"Willkommen zu meiner Gif Searcher Beta App",
         "EnjoyPar":"Viel Spaß beim Suchen und Teilen von GIFs!",
         "WarningPar":"Es ist immer noch eine <b>Entwicklungsversion</b> und Sie könnten einige Probleme finden, bitte lesen Sie die <a href=\"./documentation\" target=\"_blank\">Dokumentation</a> für weitere Details .",
+        "ShareText":"Teilen Sie mit Ihren sozialen Netzwerken",
         "CopyLinkButtonText":"Link Kopieren",
         "LinkCopiedText":"Link Kopiert"
 

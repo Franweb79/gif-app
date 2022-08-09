@@ -18,11 +18,12 @@
                 <!--{{item.images.downsized_medium.url}}-->
                 
            </div>
-           <!--TODO translate this-->
-           <p>Welcome to my Gif Searcher Beta App</p>
-           <p>Please, enjoy searching GIFs and sharing them</p>
+           
+            <!--innerHTML attribute directive makes that html tags inside WarningPar json string are rendered-->
 
-           <!--innerHTML attribute directive makes that html tags inside WarningPar json string are rendered-->
+           <p [innerHTML]="'GifsCardsComponent.WelcomePar' | translate">Welcome to my Gif Searcher Beta App</p>
+           <p [innerHTML]="'GifsCardsComponent.EnjoyPar' | translate">Please, enjoy searching GIFs and sharing them</p>
+
            <p [innerHTML]="'GifsCardsComponent.WarningPar' | translate"></p>
         </div>
 

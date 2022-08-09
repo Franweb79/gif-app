@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { GifsCardsComponent } from './gifs-components/gifs-cards/gifs-cards.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -13,10 +14,14 @@ import { GifsCardsComponent } from './gifs-components/gifs-cards/gifs-cards.comp
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule /* I had to put this TranslateModule also here because 
+    otherwise the translate pipe on the GifsCardsComponent (this component is imported and exported in this module),
+    would give error*/
   ],
   exports:[
-    GifsCardsComponent
+    GifsCardsComponent,
+    TranslateModule
   ]
 })
 export class GifsModule { }

@@ -10,6 +10,14 @@
         "AboutMeText":"Über Mich",
         "PrivacyText":"Datenschutzerklärung",
         "SearchText": "Gifs Suchen..."
+    },
+    "GifsCardsComponent":{
+
+        "WelcomePar":"Welcome to my Gif Searcher Beta App",
+        "EnjoyPar":"Please, enjoy searching GIFs and sharing them",
+        "WarningPar":"Es ist immer noch eine <b>Entwicklungsversion</b> und Sie könnten einige Probleme finden, bitte lesen Sie die <a href=\"./documentation\" target=\"_blank\">Dokumentation</a> für weitere Details ."
+
+
     }
 
 }

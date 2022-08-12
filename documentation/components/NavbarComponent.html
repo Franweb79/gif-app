@@ -1,0 +1,984 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gif-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">gif-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  NavbarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/shared-components/navbar/navbar.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-navbar</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./navbar.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./navbar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_gifsService" >_gifsService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isClickable" >isClickable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isOpen" >isOpen</a>
+                            </li>
+                            <li>
+                                <a href="#searchElement" >searchElement</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#searchHistoryBox" >searchHistoryBox</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#search" >search</a>
+                            </li>
+                            <li>
+                                <a href="#toogleSearchHistory" >toogleSearchHistory</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_gifsService: <a href="../injectables/GifsService.html" target="_self">GifsService</a>, _router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/shared/shared-components/navbar/navbar.component.ts:59</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_gifsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GifsService.html" target="_self" >GifsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/shared/shared-components/navbar/navbar.component.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search"></a>
+                    <span class="name">
+                        <span ><b>search</b></span>
+                        <a href="#search"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>search(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">src/app/shared/shared-components/navbar/navbar.component.ts:99</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toogleSearchHistory"></a>
+                    <span class="name">
+                        <span ><b>toogleSearchHistory</b></span>
+                        <a href="#toogleSearchHistory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toogleSearchHistory()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/shared/shared-components/navbar/navbar.component.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_gifsService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_gifsService</b></span>
+                        <a href="#_gifsService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/GifsService.html" target="_self" >GifsService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/shared/shared-components/navbar/navbar.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isClickable"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>isClickable</b></span>
+                        <a href="#isClickable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/shared/shared-components/navbar/navbar.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isOpen"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>isOpen</b></span>
+                        <a href="#isOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/shared/shared-components/navbar/navbar.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchElement"></a>
+                    <span class="name">
+                        <span ><b>searchElement</b></span>
+                        <a href="#searchElement"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLInputElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;searchInputElement&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/shared/shared-components/navbar/navbar.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchHistoryBox"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>searchHistoryBox</b></span>
+                        <a href="#searchHistoryBox"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/shared/shared-components/navbar/navbar.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { animate, state, style, transition, trigger } from &#x27;@angular/animations&#x27;;
+import { Component, ElementRef, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { of } from &#x27;rxjs&#x27;;
+import { GifsService } from &#x27;src/app/gifs/gifs-services/gifs/gifs.service&#x27;;
+import { environment } from &#x27;../../../../environments/environment&#x27;;
+
+@Component({
+  selector: &#x27;app-navbar&#x27;,
+  templateUrl: &#x27;./navbar.component.html&#x27;,
+  styleUrls: [&#x27;./navbar.component.css&#x27;],
+  animations: [
+    /*
+       animation triggers go here.
+    
+    */
+    trigger(&#x27;openClose&#x27;,[
+
+      state(&#x27;history-open&#x27;, style({
+        width:&#x27;100%&#x27;,
+       
+        opacity: 1,
+        /*visibility:&#x27;visible&#x27;,*/
+        backgroundColor: &#x27;yellow&#x27;
+      })),
+      state(&#x27;history-closed&#x27;, style({
+        
+        width:&#x27;100%&#x27;,
+        opacity:0,
+        /* visibility:&#x27;hidden&#x27;, i think not needed since 
+        initial display is none, so user can´t interact with the list
+        like if it was a hidden but clickable thing*/
+        backgroundColor: &#x27;yellow&#x27;
+
+
+        
+        
+      })),
+      transition(&#x27;history-closed &#x3D;&gt; history-open&#x27;,[
+        animate(&#x27;0.5s&#x27;)
+      ]),
+      transition(&#x27;history-open &#x3D;&gt; history-closed&#x27;,[
+        animate(&#x27;0.5s&#x27;)
+
+      ])
+
+    ])
+    
+  ]
+})
+export class NavbarComponent implements OnInit {
+
+  @ViewChild(&#x27;searchInputElement&#x27;) searchElement!:ElementRef&lt;HTMLInputElement&gt;;
+
+  public searchHistoryBox:any; //TODO why doesn´t work the ! null operator when i declare as type HTMLElement
+
+  public isOpen:boolean;
+
+  public isClickable:boolean;
+
+  
+  constructor(public _gifsService:GifsService, private _router:Router) { 
+   
+    this.isOpen&#x3D;false;
+
+    this.isClickable&#x3D;true;
+
+
+  }
+
+  ngOnInit(): void {
+
+    this.searchHistoryBox&#x3D;document.getElementById(&quot;search-history&quot;);
+
+
+
+  }
+
+  /*
+    this method will toggle search history. When searchHistoryBox is opened,
+    another click on the seach box will hide the search box
+  */
+  toogleSearchHistory(){
+
+//TODO if I try to initalize this on consctructor doesn´t work, why?
+    this.searchHistoryBox.style.display &#x3D; &quot;block&quot;;
+
+    if(this.isOpen&#x3D;&#x3D;&#x3D;true){
+      this.isOpen&#x3D;false;
+    }else{
+      this.isOpen&#x3D;true;
+
+    }
+
+    
+  }
+
+  //TODO look for proper type for event, to make target.value work
+  search(event:any){
+
+    //we could perform a search on another route, so back to main to show results
+    this._router.navigate([&#x27;/main&#x27;]);
+
+    /*
+      we have to specify valueToInsert could be undefined to avoid this error
+
+      https://bobbyhadz.com/blog/typescript-variable-is-used-before-being-assigned
+
+    */
+
+    let valueToInsert:string | undefined;
+   //ElementRef&lt;HTMLInputElement&gt;
+   if(event.target.nodeName&#x3D;&#x3D;&#x3D;&quot;INPUT&quot;){
+
+      valueToInsert&#x3D;event.target.value;
+
+      console.log (event.target.value);
+
+
+
+
+   }else if(event.target.nodeName&#x3D;&#x3D;&#x3D;&quot;LI&quot;){
+
+    valueToInsert&#x3D;event.target.innerText;
+
+   }
+
+    
+
+    //we will change text color depending if search is empty or not*/
+
+    let listElement:HTMLElement|null;
+
+    listElement&#x3D;document.getElementById(&quot;search-history&quot;);
+    
+    /*
+      if search box is empty, we will show a text and no history.
+
+      To do that, we replace the observable data that will be shown
+
+    */
+
+    if(!valueToInsert || !valueToInsert.trim()){
+     
+      
+      let arrayWithString:string[]&#x3D;[&quot;Please insert search&quot;];
+
+      this._gifsService.historicObserv$&#x3D;of(arrayWithString);
+
+      
+
+      listElement!.style.color&#x3D;&quot;red&quot;;
+
+      this.isClickable&#x3D;false;
+
+      /*
+        we set isOpen to true to make animation works (and thus, show the &quot;enter valid search&quot; text)
+        once we click search box with empty string
+      */
+      this.isOpen&#x3D;true;
+
+
+
+    }else{
+
+      //check if value already exists on search history
+
+      let isValueOnHistory&#x3D;false;
+
+      //we get the observable with history. It contains an array with all results
+
+      this._gifsService.historicObserv$.forEach(arrayWithAllResults&#x3D;&gt;{
+
+        /*
+          for each value inside the array, we check if current value to insert is already in historic.
+          If it is not, we add to historic. In case it is, we include not
+
+        */
+        arrayWithAllResults.forEach(currentValue&#x3D;&gt;{
+          if(currentValue&#x3D;&#x3D;&#x3D;valueToInsert){
+
+            isValueOnHistory&#x3D;true;
+          }
+        });
+        
+
+     
+
+      });
+
+
+      //as said, If value is not in historic, we add to historic. In case it is, we include not
+      if(isValueOnHistory&#x3D;&#x3D;&#x3D;false){
+
+        this._gifsService.insertValueHistoric(valueToInsert);
+        this.searchElement.nativeElement.value&#x3D;&quot;&quot;;
+  
+        listElement!.style.color&#x3D;&quot;black&quot;;
+        
+        this.isClickable&#x3D;true;
+  
+        
+
+      }
+
+      this._gifsService.getGiphyAPIData(valueToInsert);
+      
+
+      //we close the history element once search is done, isOpen controls the animation
+      this.isOpen&#x3D;false;
+     
+
+
+
+    }
+    
+
+  }
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;nav class&#x3D;&quot;navbar navbar-expand-lg navbar-light bg-light border border-warning&quot;&gt;
+    &lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+      &lt;a class&#x3D;&quot;navbar-brand&quot; href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;/assets/images/camera-icon.png&quot; alt&#x3D;&quot;app-camera-logo&quot; width&#x3D;&quot;40&quot; height&#x3D;&quot;40&quot; /&gt;&lt;/a&gt;
+      &lt;button class&#x3D;&quot;navbar-toggler&quot; type&#x3D;&quot;button&quot; data-bs-toggle&#x3D;&quot;collapse&quot; data-bs-target&#x3D;&quot;#navbarSupportedContent&quot; aria-controls&#x3D;&quot;navbarSupportedContent&quot; aria-expanded&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;
+        &lt;span class&#x3D;&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;div class&#x3D;&quot;collapse navbar-collapse&quot; id&#x3D;&quot;navbarSupportedContent&quot;&gt;
+        &lt;ul class&#x3D;&quot;navbar-nav me-auto mb-2 mb-lg-0 w-50&quot;&gt;
+          
+          &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+            &lt;a class&#x3D;&quot;nav-link&quot; target&#x3D;&quot;_blank&quot; href&#x3D;&quot;https://portfolio.avanzartewebs.com/about-me/&quot;&gt;{{&#x27;NavBarComponent.AboutMeText&#x27; | translate}}&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+            &lt;a class&#x3D;&quot;nav-link&quot; routerLink&#x3D;&quot;/privacy&quot;&gt;{{&#x27;NavBarComponent.PrivacyText&#x27; | translate}}&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+            &lt;a class&#x3D;&quot;nav-link&quot; routerLink&#x3D;&quot;/cookies&quot;&gt;Cookies&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+            &lt;a class&#x3D;&quot;nav-link&quot; routerLink&#x3D;&quot;/legal&quot;&gt;Legal&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+
+            &lt;a href&#x3D;&quot;https://giphy.com/&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;img src&#x3D;&quot;assets/images/giphy-logo-2.png&quot; style&#x3D;&quot;margin-left:20px&quot; height&#x3D;&quot;40&quot; width&#x3D;&quot;80&quot;/&gt;
+            &lt;/a&gt;
+          &lt;/li&gt;
+          
+        &lt;/ul&gt;
+
+        &lt;ul class&#x3D;&quot;d-flex flex-fill navbar-nav mb-lg-0&quot;&gt;
+          &lt;li class&#x3D;&quot;w-100&quot;&gt;
+           
+            &lt;input class&#x3D;&quot;form-control me-2&quot; type&#x3D;&quot;search&quot; placeholder&#x3D;&quot;{{&#x27;NavBarComponent.SearchText&#x27; | translate}}&quot; aria-label&#x3D;&quot;Search&quot; (keyup.enter)&#x3D;&quot;search($event)&quot; (click)&#x3D;&quot;toogleSearchHistory()&quot; #searchInputElement&gt;
+           
+            &lt;ul id&#x3D;&quot;search-history&quot;  [@openClose]&#x3D;&quot;isOpen ? &#x27;history-open&#x27; : &#x27;history-closed&#x27;&quot; &gt;
+
+              &lt;span *ngIf&#x3D;&quot;isClickable;else enterValidSearch&quot;&gt;
+                &lt;li class&#x3D;&quot;clickable-list&quot; *ngFor&#x3D;&quot;let item of this._gifsService.historicObserv$ | async&quot; (click)&#x3D;&quot;search($event)&quot;&gt;
+                  {{item}}
+                &lt;/li&gt;
+              &lt;/span&gt;
+
+              &lt;ng-template #enterValidSearch&gt;
+                &lt;li (click)&#x3D;&quot;$event.preventDefault()&quot;&gt;Please enter valid search&lt;/li&gt;
+                
+              &lt;/ng-template&gt;
+            &lt;/ul&gt;
+
+          &lt;/li&gt;
+
+          
+
+        &lt;/ul&gt;
+        
+          
+        
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+  
+  &lt;!--END SIDEBAR--&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./navbar.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">#search-history{
+    position:absolute;
+    list-style-type: none;
+    
+    border-radius: 0.25rem;
+        
+    z-index:1;
+    display:none; /*will be set to block on method toogleSearchHistory()*/
+
+}
+
+.clickable-list{
+    /*
+        to make each LI element fill all the width of UL element. As we can see on browser´s console
+        it has a padding-left of 2rem, we adjust the margin left as the same negative value.
+
+        The padding left here is to move the text a bit
+
+    */
+    margin-left: -2rem; 
+    padding-left: 2rem;
+}
+
+.clickable-list:hover{
+    background-color:#FFC107;
+    color: white;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><nav class="navbar navbar-expand-lg navbar-light bg-light border border-warning">    <div class="container-fluid">      <a class="navbar-brand" href="#"><img src="/assets/images/camera-icon.png" alt="app-camera-logo" width="40" height="40" /></a>      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">        <span class="navbar-toggler-icon"></span>      </button>      <div class="collapse navbar-collapse" id="navbarSupportedContent">        <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-50">                    <li class="nav-item">            <a class="nav-link" target="_blank" href="https://portfolio.avanzartewebs.com/about-me/">{{\'NavBarComponent.AboutMeText\' | translate}}</a>          </li>          <li class="nav-item">            <a class="nav-link" routerLink="/privacy">{{\'NavBarComponent.PrivacyText\' | translate}}</a>          </li>          <li class="nav-item">            <a class="nav-link" routerLink="/cookies">Cookies</a>          </li>          <li class="nav-item">            <a class="nav-link" routerLink="/legal">Legal</a>          </li>          <li class="nav-item">            <a href="https://giphy.com/" target="_blank"><img src="assets/images/giphy-logo-2.png" style="margin-left:20px" height="40" width="80"/>            </a>          </li>                  </ul>        <ul class="d-flex flex-fill navbar-nav mb-lg-0">          <li class="w-100">                       <input class="form-control me-2" type="search" placeholder="{{\'NavBarComponent.SearchText\' | translate}}" aria-label="Search" (keyup.enter)="search($event)" (click)="toogleSearchHistory()" #searchInputElement>                       <ul id="search-history"  [@openClose]="isOpen ? \'history-open\' : \'history-closed\'" >              <span *ngIf="isClickable;else enterValidSearch">                <li class="clickable-list" *ngFor="let item of this._gifsService.historicObserv$ | async" (click)="search($event)">                  {{item}}                </li>              </span>              <ng-template #enterValidSearch>                <li (click)="$event.preventDefault()">Please enter valid search</li>                              </ng-template>            </ul>          </li>                  </ul>                                </div>    </div>  </nav>    <!--END SIDEBAR--></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CookieBarComponent', 'selector': 'app-cookie-bar'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'GifsCardsComponent', 'selector': 'app-gifs-cards'},{'name': 'LegalComponent', 'selector': 'app-legal'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PrivacyComponent', 'selector': 'app-privacy'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NavbarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NavbarComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

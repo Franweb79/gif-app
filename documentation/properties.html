@@ -28,30 +28,9 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content getting-started">
+               <div class="content package-properties">
                    <div class="content-data">
 
-<h1 id="important">IMPORTANT</h1>
-<p>As I could not obtain a production key from Giphy, this app is working with a development key. That means you could find issues. What I tested works fine, but just keep it in mind and, of course, if you find something I could fix, please send me an email to: <a href="mailto:franprietogutweb@gmail.com" target="_blank">franprietogutweb@gmail.com</a></p>
-<h2 id="style-guide">Style Guide</h2>
-<p>Navbar component - border bottom:</p>
-<ul>
-<li><div><pre class="line-numbers"><code class="language-none">background-color: #FFC107;</code></pre></div></li>
-</ul>
-<p>Gif Cards component - hover for social media icons</p>
-<ul>
-<li><div><pre class="line-numbers"><code class="language-none">background-color: #FFC107;</code></pre></div></li>
-</ul>
-<h2 id="notes-for-developers">Notes for developers</h2>
-<h3 id="note-1">Note 1</h3>
-<p>we need to do some logic, similar to the one in the insertValueHistoric() method within the gifs.service.ts</p>
-<p>That is, because we need to get info on local storage if there is such,
-and it is stored on an order which makes most recent search is the first.</p>
-<p>As the next time we invoke the insertValueHistoric (when we make a new search), we would make some reverse logic to make that last search appear the first one, we must prepare the data to keep on having the correct orde. Otherwise would bewrongly reversed inside insertValueHistoric method(). See more details inside the app components.ts method</p>
-<h3 id="note-2">Note 2</h3>
-<p>We will not only insert the value, but will make all the logic to show it on the html, also insert it on the local storage We want to show the newest search items on the first place, so we will have to reverse the array which contain the historic(_historic)</p>
-<p>We don´t want to modify the original array, it would give lots of problems when reversing several times and such, I think it is better always having a reference to the original array with no modifications</p>
-<p>//TODO CAMBIA LOS DATOS DE LA APP D EFACEBOOK EN FACEBOOK DEVELOPERS, las URL de politica de privacidad y eso. INFORMATE BIEN DE ESO.TB LO LA TIENE QUE APROBAr fb para mostrarla en el centro de apps. pone que mal configurada.</p>
 
 
 
@@ -67,7 +46,13 @@ and it is stored on an order which makes most recent search is the first.</p>
 
 
 
-
+    <ol class="breadcrumb">
+        <li>Properties</li>
+    </ol>
+    <ul class="properties-list">
+        <li>
+            <b>Version</b> : 0.0.0</li>
+    </ul>
 
 
 
@@ -98,8 +83,8 @@ and it is stored on an order which makes most recent search is the first.</p>
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 0;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
-            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'package-properties';
+            var COMPODOC_CURRENT_PAGE_URL = 'properties.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

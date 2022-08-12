@@ -1,3 +1,9 @@
+
+# IMPORTANT
+
+As I could not obtain a production key from Giphy, this app is working with a development key. That means you could find issues. What I tested works fine, but just keep it in mind and, of course, if you find something I could fix, please send me an email to: <a href="mailto:franprietogutweb@gmail.com" target="_blank">franprietogutweb@gmail.com</a>
+
+
 ## Style Guide
 
 Navbar component - border bottom:

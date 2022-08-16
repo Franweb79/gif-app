@@ -1,6 +1,12 @@
 import { Injectable, ElementRef, ViewChild, Renderer2 } from '@angular/core';
 
-//TODO mira que es esto de declare
+/*
+  About the declare keyword:
+  https://github.com/microsoft/TypeScript/blob/main/doc/spec-ARCHIVED.md#12-ambients
+
+  https://www.tutorialspoint.com/typescript/typescript_ambients.htm
+  
+*/
 declare var window: any;
 declare var FB: any;
 

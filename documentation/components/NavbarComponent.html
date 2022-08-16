@@ -664,8 +664,8 @@ export class NavbarComponent implements OnInit {
     */
 
     let valueToInsert:string | undefined;
-   //ElementRef&lt;HTMLInputElement&gt;
-   if(event.target.nodeName&#x3D;&#x3D;&#x3D;&quot;INPUT&quot;){
+
+    if(event.target.nodeName&#x3D;&#x3D;&#x3D;&quot;INPUT&quot;){
 
       valueToInsert&#x3D;event.target.value;
 
@@ -674,11 +674,11 @@ export class NavbarComponent implements OnInit {
 
 
 
-   }else if(event.target.nodeName&#x3D;&#x3D;&#x3D;&quot;LI&quot;){
+    }else if(event.target.nodeName&#x3D;&#x3D;&#x3D;&quot;LI&quot;){
 
-    valueToInsert&#x3D;event.target.innerText;
+     valueToInsert&#x3D;event.target.innerText;
 
-   }
+    }
 
     
 
@@ -712,6 +712,7 @@ export class NavbarComponent implements OnInit {
         we set isOpen to true to make animation works (and thus, show the &quot;enter valid search&quot; text)
         once we click search box with empty string
       */
+
       this.isOpen&#x3D;true;
 
 
@@ -744,7 +745,8 @@ export class NavbarComponent implements OnInit {
       });
 
 
-      //as said, If value is not in historic, we add to historic. In case it is, we include not
+      //as said, If value is not in historic, we add to historic. In case it is, we don´t include it 
+
       if(isValueOnHistory&#x3D;&#x3D;&#x3D;false){
 
         this._gifsService.insertValueHistoric(valueToInsert);

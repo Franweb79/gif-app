@@ -52,7 +52,7 @@ export class NavbarComponent implements OnInit {
 
   @ViewChild('searchInputElement') searchElement!:ElementRef<HTMLInputElement>;
 
-  public searchHistoryBox:any; //TODO why doesn´t work the ! null operator when i declare as type HTMLElement
+  public searchHistoryBox:any; 
 
   public isOpen:boolean;
 
@@ -82,7 +82,6 @@ export class NavbarComponent implements OnInit {
   */
   toogleSearchHistory(){
 
-//TODO if I try to initalize this on consctructor doesn´t work, why?
     this.searchHistoryBox.style.display = "block";
 
     if(this.isOpen===true){

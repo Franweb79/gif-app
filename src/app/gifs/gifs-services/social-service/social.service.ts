@@ -31,9 +31,7 @@ export class SocialService {
   share(socialNetWorkName:string, urlString:string){
 
     if(socialNetWorkName==='facebook'){
-     // alert("share facebook");
 
-     //TODO lo del FB mira arriba eso del declare var
       FB.ui({
 
         method: 'share_open_graph',
@@ -50,7 +48,7 @@ export class SocialService {
         })
         
        
-          /* TODO https://stackoverflow.com/questions/10444347/share-link-to-posts-when-using-fb-ui*/
+          /* https://stackoverflow.com/questions/10444347/share-link-to-posts-when-using-fb-ui*/
         })
 
     }else if(socialNetWorkName==='twitter'){

@@ -312,8 +312,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="99"
-                            class="link-to-prism">src/app/shared/shared-components/navbar/navbar.component.ts:99</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/app/shared/shared-components/navbar/navbar.component.ts:98</a></div>
                 </td>
             </tr>
 
@@ -607,7 +607,7 @@ export class NavbarComponent implements OnInit {
 
   @ViewChild(&#x27;searchInputElement&#x27;) searchElement!:ElementRef&lt;HTMLInputElement&gt;;
 
-  public searchHistoryBox:any; //TODO why doesn´t work the ! null operator when i declare as type HTMLElement
+  public searchHistoryBox:any; 
 
   public isOpen:boolean;
 
@@ -637,7 +637,6 @@ export class NavbarComponent implements OnInit {
   */
   toogleSearchHistory(){
 
-//TODO if I try to initalize this on consctructor doesn´t work, why?
     this.searchHistoryBox.style.display &#x3D; &quot;block&quot;;
 
     if(this.isOpen&#x3D;&#x3D;&#x3D;true){

@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
     
       if(localStorage.length>0){
 
-        //TODO make non null assertion operator ! work and delete the any;
+        //TODO make with the localStorageToParse work with non null assertion operator ! and delete the any;
   
         
   
